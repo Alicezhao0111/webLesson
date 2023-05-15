@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本表單欄位</title>
+    <style>
+        #member_mod_form>*{
+            display: block;
+        }
+        #member_mod_form label{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+     <form name="search_form" id="search_form" action="" method="post"> <!--action裡面可不用寫(後端) -->
+        <label for="search">搜尋:</label> <!--for一定要寫--> <!--label欄位標題--> 
+        <input type="search" name="search"id="search" style="width: 150px;">  <!--搜尋框的寬度要自行設定比較好，因為每個瀏覽器的預設值不一樣-->
+        <input type="submit" value="搜尋" >  <!--按鈕-->
+    </form>
+
+    <hr>
+    <h2>會員資料修改</h2>
+
+    <form name="member_mod_form" id="member_mod_form" action="" method="post">
+        <label for="username">*姓名:</label>
+        <input type="text" name="username" id="username" title="請輸入姓名" placeholder="王大明" required autocomplete="on"> <!--type沒有對應屬性的直接寫text--><!--title是給視障者的導讀機制--><!--placeholder是提示訊息-->
+        
+        <label for="account">帳號: (禁用)</label>
+        <input type="text" name="account" id="account" value="ritadesign" disabled> <!--value內是給後端的，前端只要示意就好-->
+        
+        <label for="password">密碼:</label>
+        <input type="password" name="password" id="password" title="請設定密碼" placeholder="請設定密碼"> <!--type中有password這個屬性，填寫時自動會變****隱藏-->
+       
+        <label for="password2">確認密碼:</label>
+        <input type="password" name="password" id="password2" title="請再次輸入密碼" placeholder="請再次輸入密碼"> <!--id跟for不可以有重複名字-->
+
+        <label for="idnumber">身分證字號:(只讀)</label>
+        <input type="text" name="idnumber" id="idnumber" maxlength="10" value="A123456789" readonly> <!--直接顯示-->
+        
+        <label for="email">*Email:</label>
+        <input type="email" name="email" id="email" title="請輸入Email" placeholder="yourid@email.com">
+
+        <label for="tel">聯絡電話:</label>
+        <input type="tel" name="tel" id="tel" title="請輸入電話" placeholder="02-34567489" autocomplete="on">
+
+        <label for="birthday">生日:</label>
+        <input type="date" name="birthday" id="birthday" title="請選擇生日日期"> 
+
+        <label for="sex">性別:</label>
+        <select name="sex" id="sex"> <!--下拉式選單-->
+            <option>請選擇</option> <!--option裡的字不會回傳到資料庫--><!--加一個請選擇可避免使用者沒看到而資料錯誤-->
+            <option value="生理男">生理男</option> <!--值(value)裡的字才會-->
+            <option value="生理女">生理女</option>
+            <option value="其他">其他</option>
+        </select>
+    <fieldset style="width: 30%; margin-top: 30px;"> <!--因為fieldset有預設的尺寸-->
+        <legend>會員類型:</legend> <!-- 一定要包在<fieldset>裡面-->
+
+        <!-- 可選擇的點點 -->
+        <!-- 用name來判斷是不是一組的，二選一，所以name要用一樣，id則不可以一樣 -->
+        <input type="radio" name="member" id="member1" value="一般會員">
+        <label for="member1">一般會員</label>
+
+        <input type="radio" name="member" id="member2" value="終身會員" checked> <!--下checked先幫他選擇-->
+        <label for="member1">終身會員</label>
+    </fieldset>
+
+    <fieldset style="width: 35%; margin-top: 30px;"> 
+        <legend>訂閱內容:(複選)</legend>
+
+        <input type="checkbox" name="order" id="order1" value="社會">
+        <label for="order1">社會</label>
+
+        <input type="checkbox" name="order" id="order2" value="政治">
+        <label for="order2">政治</label>
+
+        <input type="checkbox" name="order" id="order3" value="體育">
+        <label for="order3">體育</label>
+
+        <input type="checkbox" name="order" id="order4" value="娛樂">
+        <label for="order4">娛樂</label>
+
+        <input type="checkbox" name="order" id="order5" value="生活">
+        <label for="order5">生活</label>
+
+        <input type="checkbox" name="order" id="order6" value="健康">
+        <label for="order6">健康</label>
+    </fieldset>
+
+
+
+        <label for="file">上傳檔案:</label>
+        <input type="file" name="file" id="file" title="請上傳檔案" multiple> <!--可傳多個檔案-->
+
+        <label for="message">留言:</label>
+        <textarea name="message" id="message" title="請填寫這個欄位"cols="30" rows="10"></textarea> <!--cols跟rows也可在css中設定-->
+
+        <p>
+            <input type="submit" value="送出">
+            <input type="submit" value="重填">
+        </p>
+
+        <small>(表單僅示意，無資料蒐集功能)</small>
+
+
+    </form>
+
+</body>
+</html>

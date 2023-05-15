@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>芮塔花室</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="./CSS/style.css">
+    
+</head>
+<body>
+    <!-- 頁首區 -->
+    <header id="topbar">
+        <h1 class="logo">
+            <a href="index.html">
+              <img src="./images/logo_b.svg" alt="芮塔花室">
+            </a>
+        </h1>
+        <nav>
+           <ul class="icon"> <!-- target blank 另開視窗 -->
+                <li><a href="https://www.facebook.com/"target="_blank"class="icon-fb"></a></li>
+                <li><a href="https://www.facebook.com/"target="_blank"class="icon-ig"></a></li>
+                <li><a href="https://www.facebook.com/"target="_blank"class="icon-line"></a></li>
+            </ul>
+            <ul class="menu">
+                <li><a href="">HOME</a></li>
+                <li><a href="">NEWS</a></li>
+                <li><a href="">SERVICE</a></li>
+                <li><a href="">VIDEO</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 主要內容區 -->
+    <main>
+        <!-- banner區 -->
+        <div id="banner"></div>
+         <!-- NEWS區 -->
+        <section id="news">
+            <h2 class="title">NEWS</h2>
+            <!-- 以下的簡寫div.list_box>article.list_item*3>(figure>img)+h2+p+a 兄弟用+號，下一層用箭頭，用括號是因為要增加的是figure的兄弟，不是img-->
+            <div class="list_box">
+                <article class="list_item">
+                    <figure><img src="images/pt_news1.jpg" alt=""></figure>
+                    <div>
+                    <h2>NEWS TITLE</h2>
+                    <p>temporibus ex dicta delectus culpa omnis impedit optio commodi officiis dolore, ipsa in. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, neque! Debitis eaque maiores possimus. Voluptates distinctio nesciunt, temporibus ab illo tempore, hic voluptatibus aliquam rerum debitis nemo perferendis, id cumque!</p>
+                    <a href="news_content.html">more></a>
+                    </div>
+                </article>
+                <article class="list_item">
+                    <figure><img src="images/pt_news2.jpg" alt=""></figure>
+                    <div>
+                    <h2>NEWS TITLE</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta numquam ipsa ipsam amet eligendi totam, veniam, beatae officiis vel qui nostrum earum et nesciunt nulla quasi. Iste perferendis vero consequatur.</p>
+                    <a href="news_content.html">more></a>
+                    </div>
+                </article>
+                <article class="list_item">
+                    <figure><img src="images/pt_news3.jpg" alt=""></figure>
+                    <div>
+                    <h2>NEWS TITLE</h2>
+                    <p>adipisicing elit. Maiores culpa, provident, doloremque lorem pofd dopokf pokps'dpfkoo jfis;dj iojf;sdijfi jos;idjfioj s;idjf iste porro eius eaque praesentium voluptates autem consequuntur ratione velit ipsum illum animi, iusto suscipit alias quia. Error?</p>
+                    <a href="news_content.html">more></a>
+                    </div>   
+                </article>
+            </div>
+            <!--<div>123456</div>-->
+        </section>
+        <!-- SERVICE區 -->
+        <section id="service">
+            <h2 class="title">SERVICE</h2>
+            <!-- 縮寫:div.list_box>div.list_item*4>a[href="#"]>h2{SERVICE TITLE}+p  中括號裡面放屬性，大括號裡面放內容--> 
+            <div class="list_box">
+                <div class="list_item service_1"> <!--設兩個class名稱-->
+                    <a href="#">
+                        <h2>SERVICE TITLE</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda minima doloremque ex, eveniet esse nemo repudiandae adipisci eius. Nostrum dolorem mollitia eligendi. Nesciunt eos distinctio minima perferendis id incidunt tempore!</p>
+                    </a>
+                </div>
+                <div class="list_item service_2">
+                    <a href="#">
+                        <h2>SERVICE TITLE</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda minima doloremque ex, eveniet esse nemo repudiandae adipisci eius. Nostrum dolorem mollitia eligendi. Nesciunt eos distinctio minima perferendis id incidunt tempore!</p>
+                    </a>
+                </div>
+                <div class="list_item service_3">
+                    <a href="#">
+                        <h2>SERVICE TITLE</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda minima doloremque ex, eveniet esse nemo repudiandae adipisci eius. Nostrum dolorem mollitia eligendi. Nesciunt eos distinctio minima perferendis id incidunt tempore!</p>
+                    </a>
+                </div>
+                <div class="list_item service_4">
+                    <a href="#">
+                        <h2>SERVICE TITLE</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda minima doloremque ex, eveniet esse nemo repudiandae adipisci eius. Nostrum dolorem mollitia eligendi. Nesciunt eos distinctio minima perferendis id incidunt tempore!</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- VIDEO區 -->
+        <section id="video">
+            <h2 class="title">VIDEO</h2>
+            <video src="./images/Planter.mp4" poster="images/cover.jpg"controls ></video> <!--controls是撥放器--><!--autoplay一定要在後面加muted才有功能-->
+        </section>
+        <!-- ABOUT區 -->
+        <section id="about">
+            <div>
+            <h2 class="title">ABOUT</h2>
+            <p class="scrollbox">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt quod quaerat, voluptatem dolor, omnis nostrum minus sunt nulla ipsa reiciendis quibusdam debitis cum deleniti vero. Unde itaque accusamus quae, aut consequatur, quo obcaecati autem dolores nemo laboriosam voluptatem nobis dignissimos, commodi corporis voluptas vero ex dolorem voluptate quod. Quae est excepturi voluptates, qui numquam illum libero quam voluptatum ullam error quia laboriosam explicabo odio ad consequuntur minus expedita fugit. Sapiente vel eaque dicta iure, magni at corrupti consequuntur placeat fuga, facilis quas doloribus aut repellat qui laboriosam doloremque nesciunt amet cum dolorem! Nam numquam ipsum maxime exercitationem neque laboriosam accusamus possimus at. Laborum, incidunt minima. Reiciendis, earum consequuntur! Dicta omnis libero minima repudiandae vitae voluptates nesciunt consequatur vel possimus laboriosam! Veniam amet ullam, aperiam sapiente sed quod odit cum accusamus hic, inventore a quo! Eaque praesentium fugit voluptate doloribus aspernatur amet dolor, illo facere nobis impedit? Amet molestiae non minus voluptatem sint pariatur? Asperiores adipisci assumenda non perspiciatis ipsam praesentium quaerat voluptas. Necessitatibus ducimus neque hic deserunt recusandae veniam minus, velit deleniti, dolor aperiam accusantium labore eveniet doloribus dolore consequatur est iusto. Provident quaerat voluptate aliquam ipsum, sint repudiandae veniam rerum numquam ab impedit distinctio, deleniti placeat soluta culpa at nostrum? Quis, repellendus ea! Quasi voluptas soluta debitis recusandae unde aliquam voluptate eum placeat vel, temporibus a hic accusantium, laudantium consequatur quia ipsum nesciunt illum! Amet harum ab aut voluptates. Aut dolorem modi neque rem assumenda recusandae aperiam repellendus alias harum cupiditate, eligendi odit ducimus accusantium quaerat quod. Eos odit recusandae deleniti alias. Nam officiis iusto nihil nostrum culpa vel nemo itaque natus molestiae distinctio harum est, corrupti quibusdam repellat recusandae ex ratione! Debitis, corrupti ipsum. Eos voluptatum doloremque, quos nam eligendi magnam veritatis necessitatibus perspiciatis vitae autem qui, iure sunt eum amet sapiente laudantium voluptatibus numquam, accusamus tempore ea reprehenderit. Voluptates tempore sunt sit suscipit ipsa repellat? Ea hic modi quasi placeat! Quis molestiae ipsum tempora molestias aperiam delectus blanditiis voluptate numquam distinctio nobis deleniti voluptatem, repellendus sapiente at error unde veritatis expedita autem esse! Repellendus necessitatibus enim itaque delectus repellat minima eum quibusdam distinctio doloribus deserunt totam at maxime quos, aliquid culpa fuga libero consectetur facere molestiae. Beatae consequatur repellat animi blanditiis repellendus nemo omnis, culpa, dignissimos aliquam quos nesciunt aspernatur ipsa veniam ad non doloribus, fugit recusandae mollitia et! Vel aut amet ducimus doloremque asperiores. Fugit recusandae voluptatem molestiae obcaecati ea! Nam dolores sed eaque omnis eum id cumque, temporibus quo sunt saepe non inventore delectus ut quas veniam totam quae expedita eius earum, voluptate distinctio sequi quaerat deserunt? Quod natus consequuntur maxime illo? Labore placeat vitae illum atque officiis excepturi sunt deserunt error, quidem aliquam aspernatur, ipsam, reiciendis at porro! Neque corporis officia dolore libero aliquam, quaerat voluptas possimus qui quo perferendis, commodi deserunt aperiam autem ea eveniet iure eum incidunt in dolor, reprehenderit expedita. Vitae enim magni optio inventore autem laborum corrupti, voluptatem, iste magnam, saepe corporis sequi harum at architecto. Animi iure quis dignissimos rerum autem illum veritatis possimus error ducimus aperiam eaque, nostrum fugit debitis vitae nam hic voluptatem laboriosam. Consequuntur, sed quo reprehenderit quae quos, debitis voluptas eaque quasi mollitia deleniti, dolorem provident ad voluptatum error? Architecto nemo doloremque rem obcaecati itaque. Minus voluptas asperiores saepe magni pariatur rem, eveniet ullam nesciunt deleniti. Illum, at totam nisi architecto voluptates vitae fuga exercitationem. Delectus nisi consequuntur ratione necessitatibus voluptate vitae voluptas ab. Omnis repellat esse aperiam, deserunt saepe sequi quo ratione excepturi delectus sint officia nostrum molestias odit blanditiis illo nemo libero nesciunt magni. Omnis iste ducimus voluptas quasi fuga eius eum ullam suscipit aliquam sed ab soluta cupiditate, perspiciatis nisi eos perferendis unde minus tenetur obcaecati ex doloremque expedita? Rerum reiciendis blanditiis facilis nulla velit est, dolorum odit incidunt necessitatibus tempore reprehenderit quisquam deleniti sit facere mollitia. Enim minus dolores eum placeat minima quis, provident aspernatur pariatur quidem id nobis accusamus distinctio fugit consequatur iure voluptas! Molestiae aspernatur inventore doloribus quaerat eligendi ad dolorem voluptatum quam repellendus, soluta aliquid fugiat harum placeat nihil ipsa recusandae alias beatae molestias libero quis est laudantium ea at neque? Ad obcaecati maxime quaerat. Natus, porro eum neque magnam molestiae eaque aspernatur rem enim error sed quos mollitia officia ratione, perferendis, dolores esse corrupti maxime delectus. Aspernatur laboriosam ipsum facere eum. Soluta pariatur deleniti molestiae qui. Asperiores libero reiciendis atque quidem, sed molestias sunt similique placeat quam dicta est. Sit quod natus magni cumque! Nisi non accusantium quaerat distinctio laudantium amet rerum fuga nemo quasi in sunt optio cum voluptatibus voluptates incidunt, est quia sapiente temporibus a. Sed corporis laudantium distinctio, corrupti pariatur reiciendis quae tempora maiores adipisci ex excepturi nam vero dolorum expedita ipsum voluptates quas enim ipsam et amet aliquam cumque magni. Placeat repellendus facere fugit porro provident sunt, laborum atque enim autem deserunt id, quod totam voluptas esse! A corporis magni sint error, expedita doloremque perferendis itaque, sequi, esse ratione alias assumenda sed ex? Nisi in assumenda eius, suscipit deserunt, laborum obcaecati neque architecto illo ullam, temporibus nemo necessitatibus fuga iure est doloribus! Exercitationem nesciunt commodi assumenda sequi harum similique eos ut, architecto veritatis velit? Distinctio vero dolorum delectus dolores alias dicta voluptate deserunt dolore soluta quam vitae rem nam velit adipisci debitis, consectetur ab? Natus, soluta alias! Tenetur architecto quia aliquam reiciendis veniam id, esse dolores voluptatibus quis natus, odit amet magni ut totam et sequi! Nemo vitae voluptatum architecto odit, iusto pariatur ad voluptates maiores eos eaque labore sapiente aut, cumque fugit. Quisquam dignissimos architecto delectus repellendus dolorem non aliquid? Rem nemo, error recusandae quis placeat ullam quasi sequi? Rerum rem sapiente temporibus eius! Ad quidem doloribus quos beatae aut possimus velit voluptate inventore, nesciunt temporibus tempore eos magnam odit neque nam delectus? Voluptates adipisci explicabo et iste rem doloribus doloremque animi veniam minus officiis! Reprehenderit vel dolorum magnam labore distinctio ad esse animi. Voluptatum nihil optio similique libero hic ipsa, quibusdam voluptas modi ullam quasi, officia sunt quos doloremque porro iure rem laborum dicta harum asperiores quo consequuntur eligendi voluptates. Odit a libero aspernatur quis voluptates beatae illo et debitis!</p>
+            </div>
+            <video src="images/flower.mp4" autoplay muted loop></video>  <!--loop循環播放 -->
+        </section>
+        <!-- CONTACT區 -->
+        <section id="contact">
+            <h2 class="title">CONTACT</h2>
+
+        <form name="message_form" id="message_form"action="" method="post">
+            <label for="username">*姓名:</label>
+            <input type="text" name="username" id="username" title="請輸入姓名" placeholder="王大明" required autocomplete="on">
+
+            <label for="tel">聯絡電話:</label>
+            <input type="tel" name="tel" id="tel" title="請輸入電話" placeholder="02-34567489" autocomplete="on">
+
+            <label for="email">*Email:</label>
+            <input type="email" name="email" id="email" title="請輸入Email" placeholder="yourid@email.com">
+
+            <label for="message">留言:</label>
+            <textarea name="message" id="message" title="請填寫這個欄位"></textarea> 
+            <!-- 送出按鈕須放在form裡面 -->
+            <button>
+                <span>送出</span>
+            </button>
+        </form>
+        <small>(表單僅示意，無資料蒐集功能)</small>
+
+    </section>
+
+    </main>
+    <!-- 頁尾區 -->
+    <footer>Copyright © 2023 芮塔花室 All rights reserved</footer>
+</body>
+</html>

@@ -1,0 +1,448 @@
+@charset "UTF-8"; /*一定要放在第一行*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@font-face {
+	font-family: "AngillaTattoo";
+	src: url('../webfonts/AngillaTattoo_PERSONAL_USE_ONLY.ttf');
+}
+/*import上面只能有UTF-8或是import，放在第二行比較安全*/
+
+/*eric css eset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box; /*不累加邊框與內距,RWD*//*所以只要算margin跟width*/
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family: /*⻄文*/ -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+    /*中文*/ "蘋方-繁", "PingFang TC", "Noto Sans TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+}
+ol, ul {
+	list-style: none; /*所以不會有點點*/
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* 共用 */
+img{
+    display: block;
+    width: 100%;
+}
+/*頁首區*/
+#topbar{ /*只要用display flex的語法，爸爸也一定要寫才會成功*/
+	position: fixed;/*fixed不會跟卷軸滾動*//*只要設定position，寬度會自動轉換成內容等寬，所以如果要指定寬度，要再加樣式*/
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex; /*變水平(預設)排*/
+	justify-content: space-between; /*主軸方向齊頭齊尾*/
+	padding: 20px;
+	z-index: 1; /*永遠在最前面*/
+}
+.menu {
+	padding: 10px 15px;
+	margin-top: 15px;
+	background-color: rgba(255,255,255,0.2);
+	border-radius: 50px;
+	backdrop-filter: blur(5px); /*必須搭配背景半透明*/
+	border:1px solid rgba(255,255,255,0.1); /*修改input邊框的預設樣式*/
+	box-shadow: 2px 2px 5px rgba(255,255,255,0.15) rgba(255,255,255,0.15), inset -1px -1px 1px rgba(255,255,255,0.3);
+
+}
+.logo{
+    width: 80px;
+}
+#topbar ul{
+	display: flex; /*依網頁版面，*/
+	justify-content: flex-end; /*主軸方向齊尾*/
+
+}
+.icon a{
+    display: block; /*才可以改a的尺寸*/
+    width: 35px;
+    height: 35px;
+}
+.icon-fb{
+background-image: url(../images/icon-fb.svg);
+} /*image 的連結使用url*//*滑鼠hover時換圖片的效果，使用css比用js好*/
+.icon-ig{
+	background-image: url(../images/icon-ig.svg);
+}
+.icon-line{
+	background-image: url(../images/icon-line.svg);
+}
+.icon-fb:hover{
+	background-image: url(../images/icon-fb-hover.svg);
+}
+.icon-ig:hover{
+	background-image: url(../images/icon-ig-hover.svg);
+}
+.icon-line:hover{
+	background-image: url(../images/icon-line-hover.svg);
+}
+.menu a{
+	display: block;
+	text-decoration: none;
+	color:rgb(180, 117, 80);
+	padding: 5px 10px;
+}
+.menu li::after{ /*偽元素*/ /*常用在裝飾用的物件上*//*偽元素是一個區塊，偽類別是一個動作*/
+	content: "";
+	display: block;
+	height: 2px;
+	width: 0%;
+	background-color: rgb(99, 69, 23);
+}
+.menu li:hover:after{
+	width: 100%; /*%是指前一層爸爸的相對尺寸*/
+	transition: .35s; /*轉場效果*/
+}
+/*主要內容共用*/
+main > *{ /*">"箭頭指第一層，所以這邊是<main>第一層所有元素*/
+	height: 100vh; /*視窗的相對高度，此為滿版*/
+	
+}
+section{
+	display: flex;
+	flex-direction: column; /*設定主軸為垂直*/
+	align-items: center;/*設定副軸(水平)置中*/
+	justify-content: center; /*設定主軸(垂直)置中*/
+	
+}
+.title{
+	font-family: 'Dancing Script', cursive;
+	font-size: 3rem; /*rem根據使用者預設的字體尺寸*/
+	margin:50px 0;
+	padding-top: 20px;
+	border-top: 3px solid gray;
+}
+
+.list_box{
+	display: flex;
+	width: 80%;
+	margin-top: 30px;
+}
+.list_item{
+	margin: 0 15px;
+	flex: 1; /*容器裡面內容自動都等寬*/
+	border-radius: 20px 20px 0 0;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+	overflow: hidden; /*內容溢出時，自動隱藏*/
+}
+
+.list_item h2{
+	font-family: "AngillaTattoo", serif; /*加一個襯線字或是無襯線字的類別，這樣之後掉字才能有字體補上*/
+}
+
+/*NEWS區*/
+#news{
+	background-color: #f2edf0;
+}
+#news figure{
+	height:30vh;
+}
+#news img{
+	object-fit: cover; /*照片自動縮放*//*會自動置中*/
+	height: 100%;
+}
+
+#news .list_item div{
+	padding: 20px;
+}
+#news p{
+	font-size: 1.1rem;
+	line-height: 1.4rem;
+	margin:15px 0;
+	text-align: justify;/*文字齊行(中文才會用)*/
+	/*多行省略*/
+	overflow: hidden;
+	text-overflow: ellipsis; /*溢出時省略*/
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp:5; /*顯示出幾行*/
+}
+
+#news a{
+	display: block; /*讓他成為區塊，就可以讓他靠右*/
+	color: black;
+	text-align: right;
+	text-decoration: none;
+
+}
+
+/*service區*/
+#service{
+	background-color: #E6ECE5;
+}
+#service .list_box{
+	height: 60vh; /*給整體的高度*/
+
+}
+#service .list_item{
+	display: flex;
+	align-items: flex-end;
+	background-size: cover;
+	background-position: center;
+	
+} 
+#service a{
+	display: block;
+	width: 100%;
+	padding:15px;
+	background-color: rgba(0, 0, 0, 0.15);
+	/*修改超連結預設樣式*/
+	color:white;
+	text-decoration: none;
+}
+#service a:hover{
+	text-decoration: underline;
+}
+#service p{
+	margin-top: .6rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.service_1{
+	background-image: url(../images/pt_svc1.jpg);
+}
+.service_2{
+	background-image: url(../images/pt_svc2.jpg);
+}
+.service_3{
+	background-image: url(../images/pt_svc3.jpg);
+}
+.service_4{
+	background-image: url(../images/pt_svc4.jpg);
+}
+/*video區*/
+#video{
+	background-color: #ECF0F4;
+}
+#video video{
+	height: 70vh;
+	margin-top: 30px;
+
+}/*後面的video是標籤的video*/
+
+/*About 區*/
+#about{
+	position: relative; /*為了給about video的position對位*/
+}
+#about video{
+	position: absolute; /*會往上找有設定position的元素當爸爸*/
+	top: 0;
+	left: 0;
+	z-index: -1;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	filter: brightness(130%) sepia(20%) opacity(.4); /*brightness:100是原本亮度*//*sepia是棕色色調*/
+}
+#about div{
+	display: flex;/*主軸:垂直*/
+	flex-direction: column; /*主軸:置中*/
+	align-items: center;/*副軸:置中*/
+	width: 60%;
+	height: 100vh;
+	padding:0 50px;
+	background-color: rgba(226,114,147,0.4);
+}
+
+#about p.scrollbox{ /*也可以只寫scrollbox*/
+	margin-top: 30px;
+	height: 70vh;
+	overflow: auto; 
+	padding:0 15px;
+}
+/*卷軸樣式修改*/
+.scrollbox::-webkit-scrollbar {
+	width: 10px;
+	background: #eee;
+  }
+  
+  /*.scrollbox::-webkit-scrollbar:horizontal {
+	height: 10px;
+  }  水平卷軸*/
+  
+  .scrollbox::-webkit-scrollbar-button {
+	width: 10px;
+	height: 10px;
+	background: #9b5c48;
+  }
+  
+  .scrollbox::-webkit-scrollbar-thumb {
+	background: #ac450a;
+  }
+  
+  /*.scrollbox::-webkit-scrollbar-corner {
+	background: #d80b0bb0;
+  }*/
+
+/*Contact區*/
+#contact{
+	background-image: url(../images/bg_contact.jpg);
+	background-size: cover;
+	background-position: center; /*置中*/
+	background-attachment: fixed;/*背景釘住*/
+
+}
+#message_form{
+	width: 35%;
+}
+
+
+/*提示文字*/
+::placeholder{
+	font-size: .8rem;
+	color:#bfa7a7
+
+}
+#message_form>*{
+	display: block;
+	width: 100%; /*會跟爸爸一樣寬(35%)*/
+	box-sizing: border-box; /*表單要另外加入*/
+}
+#message_form input, #message_form textarea{
+	padding: 10px 15px;
+	/*玻璃擬態(毛玻璃效果)*/
+	background-color: rgba(255,255,255,0.2);
+	backdrop-filter: blur(5px); /*必須搭配背景半透明*/
+	border:1px solid rgba(255,255,255,0.1); /*修改input邊框的預設樣式*/
+	box-shadow: 2px 2px 5px rgba(255,255,255,0.15) rgba(255,255,255,0.15), inset -1px -1px 1px rgba(255,255,255,0.3);
+
+}
+
+#message_form input{
+	font-size: .95rem;
+	border-radius: 100px;
+	color:#da8484
+}
+#message_form textarea{
+	padding: 10px 15px;
+	height: 4.15rem;/*對應字級的高度(0.95rem*5行)*/
+	border-radius: 10px;
+}
+
+#message_form label{
+	margin: 30px 0 10px;
+	font-size: .85rem;
+	letter-spacing: .1rem;
+}
+
+#contact small{
+	margin-top: 30px;
+	font-size: .8rem;
+}
+
+#contact small{
+	margin-top: 30px 0 10px;
+	font-size: .8rem;
+
+}
+/*CSS button hover*/
+#message_form button {
+	/*position: relative;*/
+	outline: none;
+	/*text-decoration: none;*/
+	border-radius: 50px;
+	display: flex; /*必須是flex, span才能分開滑動*/
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	/*text-transform: uppercase;*/
+	height: 60px;
+	width: 50%;
+	margin: 50px auto;
+	/*opacity: 1;
+	background-color: #ffffff;
+	border: 1px solid rgba(22, 76, 167, 0.6);*/
+	background-color: rgba(255,255,255,0.2);
+	backdrop-filter: blur(5px); /*必須搭配背景半透明*/
+	border:1px solid rgba(255,255,255,0.1); /*修改input邊框的預設樣式*/
+	box-shadow: 2px 2px 5px rgba(255,255,255,0.15) rgba(255,255,255,0.15), inset -1px -1px 1px rgba(255,255,255,0.3);
+  }
+  button span {
+	color: #164ca7;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.7px;
+  }
+  button:hover {
+	animation: rotate 0.7s ease-in-out both;
+  }
+  button:hover span {
+	animation: storm 0.7s ease-in-out both;
+	animation-delay: 0.06s;
+  }
+  
+  @keyframes rotate {
+	0% {
+	  transform: rotate(0deg) translate3d(0, 0, 0);
+	}
+	25% {
+	  transform: rotate(3deg) translate3d(0, 0, 0);
+	}
+	50% {
+	  transform: rotate(-3deg) translate3d(0, 0, 0);
+	}
+	75% {
+	  transform: rotate(1deg) translate3d(0, 0, 0);
+	}
+	100% {
+	  transform: rotate(0deg) translate3d(0, 0, 0);
+	}
+  }
+  @keyframes storm {
+	0% {
+	  transform: translate3d(0, 0, 0) translateZ(0);
+	}
+	25% {
+	  transform: translate3d(4px, 0, 0) translateZ(0);
+	}
+	50% {
+	  transform: translate3d(-3px, 0, 0) translateZ(0);
+	}
+	75% {
+	  transform: translate3d(2px, 0, 0) translateZ(0);
+	}
+	100% {
+	  transform: translate3d(0, 0, 0) translateZ(0);
+	}
+  }
+/*頁尾區*/
+footer{
+	background-color: #f2edf0;
+	padding:50px; /*內距會包含背景，MARGIN則不會*/
+	text-align:center;
+}
