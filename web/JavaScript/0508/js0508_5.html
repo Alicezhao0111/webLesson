@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1+2+3+...+n=?
+        function add(max){
+        let s=0;
+        for(let i=1;i<=max;i++){
+            s=s+i
+        }
+        return s;
+    }
+    let inputNum = Number (prompt('請輸入任意值',''));
+    let ans1 = add(inputNum);
+    console.log(ans1);
+
+    //寫法二
+    let add2 = function(max){
+        let s=0;
+        for(let i=1;i<=max;i++){
+            s=s+i
+        }
+        return s;
+    }
+    let ans2=add(inputNum);
+    console.log(`寫法2:${ans2}`)/*console.log(ans2);*/
+
+    //寫法二
+    let add3=(max) => {
+        let s=0;
+        for(let i=1;i<=max;i++){
+            s=s+i
+        }
+        return s;
+    }
+    let ans3=add(inputNum);
+    console.log(`寫法3:${ans3}`)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字輪播</title>
+    <!-- jQuery函式庫 一定要寫在最上面--> 
+    <script src="./jquery/js/jquery-1.11.3.min.js"></script>
+    <!-- 文字套件的JS -->
+    <script src="./jquery/js/jquery.textslider.js"></script>
+    <!-- 文字套件的CSS -->
+    <link rel="stylesheet" href="./jquery/css/textslider.css">
+    <!-- 自行撰寫的JS -->
+    <script>
+        $(function(){
+            //$('選擇器名稱').textslider();
+            $('.slideText').textslider({
+                scrollSpeed:1000, //捲動的速度
+                pause:500, //停頓的時間
+                //一次捲動的行數
+                scrollNum:1,
+                //捲動方向(上:scrollUp)(下:scrollDown)
+                direction:'scrollDown'
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="slideText"> <!--小駝命名方法，一定要這個名字，因為按ctrl點上面的textslider，可以看到裡面的命名是用這個-->
+        <ul>
+            <li>News1</li>
+            <li>News2</li>
+            <li>News3</li>
+            <li>News4</li>
+            <li>News5</li>
+            <li>News6</li>
+            <li>News7</li>
+            <li>News8</li>
+            <li>News9</li>
+        </ul>
+    </div>
+</body>
+</html>

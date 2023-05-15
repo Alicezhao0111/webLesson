@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //迴圈中執行忽略方法 ==> continue
+        //(跳過不執行此次的迴圈剩餘指令)，直接回到迴圈開始的地方繼續執行
+
+        //1-100中的5的倍數合，但落在30-50區間的倍數值不要
+        let s=0;
+        let i=1;
+        while(i<=100){
+            if (i>=30 && i<=50){
+                //不處理任何事
+                //console.log(i); (可輸入此去檢查)
+                i++;
+                continue;
+            } else {
+                if (i % 5 == 0){
+                    s=s+i;
+                }
+            }
+            i++;
+        }
+        console.log(`1-100中5的倍數合為 ${s} `);
+
+    </script>
+</body>
+</html>

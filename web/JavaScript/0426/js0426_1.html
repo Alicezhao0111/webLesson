@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 亂數(跑出來是0-1之間的小數) -->
+    <script>
+        //let n1 = Math.random();
+        //console.log(n1);
+        //n1=n1*100
+        //console.log(n1*100);
+        //將亂數值的小數，無條件捨去
+        //console.log(Math.floor(n1));
+
+        //使用亂數產生0-4值 ==> 0,1,2,3,4 (其一)
+
+        let n2 = Math.random()*5; //因設定的數字最大到4 (所以*5) //若不想要取得0，5後面要再寫+1
+        console.log('亂數值=>'+n2);
+        n2 = Math.floor(n2);
+        console.log('去小數=>'+n2);
+
+        let n3 = Math.random()*50; //0-49
+        n3= Math.floor(n3);
+        if (n3==0){ //如果n3是0，則變成1
+            n3=1;
+        }
+        console.log(n3);
+
+        //亂數產生6個數字，範圍是1-49，數字不能重複，放在陣列中，並且印出來
+        
+        let arr1=[0,0,0,0,0,0,];
+        for(let i = 0; i<arr1.length;i++){
+            let num = (Math.random()*49)+1;
+            num = Math.floor(num);
+            //檢查陣列中是否有重複值 -->indexOf(檢查的值)
+            if(arr1.indexOf(num)>=0){
+                //如果重複，再重新產生新的變數
+                //console.log('重複了');
+                i=i-1; //若發生重複，則i值要倒扣回來，回到上面的i++，不然原先的位置會空掉
+                continue;
+            }
+            arr1[i] = num;
+        }
+        console.log(`排序前->${arr1}`);
+        
+
+
+
+        //兩數交換 讓a=5, b=3
+        //let a = 3;
+        //let b = 5;
+        //let c=a;
+        //a=b;
+        //b=c;
+        //console.log(`a=${a},b=${b}`);
+
+        let arr2 = [35,21,28,14];
+        console.log(arr2)
+
+        //氣泡排序(遞增)
+        for (let i=0; i<arr2.length;i++){
+            for(let j=0; j<arr2.length-i;j++){
+                //檢查前值是否大於後值
+                if(arr2[j]>arr2[j+1]){
+                    let temp = arr2[j]; //保存大的值
+                    //交換
+                    arr2[j]=arr2[j+1]; //小的值放前面
+                    arr2[j+1] = temp; //大的值放後面 => temp
+                }
+            }
+        }
+        console.log(`排序後->${arr2}`)
+
+        
+
+   
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

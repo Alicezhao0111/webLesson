@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瀑布流效果</title>
+</head>
+<style>
+    #container {margin:auto;}
+    .box{width: 300px;margin: 5px;}
+    .box img{width: 300px; vertical-align: top;}
+</style>
+<script src="./js/jquery-1.11.3.min.js"></script>
+<script src="./js/imagesloaded.pkgd.min.js"></script>
+<script src="./js/masonry.pkgd.min.js"></script>
+<script>
+    $(function(){
+        //載入圖片
+        $('#container').imagesLoaded(function(){
+            //使用排列圖片
+            $('#container').masonry({ //Masonry常用於優化垂直可用位置，自動排序layout
+                isFitWidth:true  //左右平均留白
+            });
+
+        });
+    });
+</script>
+<body>
+    <div id="container">
+        <div class="box">
+            <img src="http://picsum.photos/200/100" alt="">
+        </div>
+        <div class="box">
+            <img src="http://picsum.photos/300/200" alt="">
+        </div>
+        <div class="box">
+            <img src="http://picsum.photos/350/300" alt="">
+        </div>
+        <div class="box">
+            <img src="http://picsum.photos/400/200" alt="">
+        </div>
+        <div class="box">
+            <img src="http://picsum.photos/450/300" alt="">
+        </div>
+        
+    </div>
+</body>
+</html>

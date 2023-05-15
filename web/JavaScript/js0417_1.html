@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //建立函式，函示中的區塊程式不會馬上執行
+        /*
+        function sayHi(){
+            // console.log("Hi");
+            //回傳值可以是任何資料、變數、運算式
+            return 'Hi'; //接受函式回傳來的值(Hi)
+
+        }
+        //呼叫函式時才會執行函式
+        let value=sayHi(); //去了解函式回傳的是甚麼 有點像 let score = prompt("","");
+        console.log(value);
+        */
+
+        /*
+        //建立一個單一參數的函式
+        function show (message){
+            console.log(message);
+        }
+        show('hi');
+        show('早安');
+        */
+
+        //建立兩個參數的函式
+        function show (message, errid){ //函式中有兩個參數，之後呼叫也要兩個參數
+           console.log('message:'+message);
+           console.log('errid:'+errid);
+           
+            if(errid==1){
+                console.log( '結果:'+message+',帳號錯誤');
+            }else if(errid==2){
+                console.log('結果:'+message+'密碼錯誤');
+            }else if(errid==3){
+                console.log('結果:'+message+'帳號密碼接錯誤');
+            }
+        }
+        show('登入作業',1);
+        show('',2);
+    </script>
+</body>
+</html>

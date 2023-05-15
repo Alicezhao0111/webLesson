@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 步驟2:樣子 -->
+    <style>
+        a{ text-decoration: underline;
+            color: red;
+
+        }
+        a:hover{ /*滑鼠碰到時底線隱藏*/
+            text-decoration: none;
+        }
+        p{
+            line-height: 1.8rem;
+            font-size: 1.2rem;
+            text-align: justify; /*左右對齊*/
+        }
+        .ttpShow{
+            display: none;
+
+        }
+        #ttpPanel{ /*以下參數先在ttpShow裡製作，這樣才看得到*/
+            /*文字與外框保持距離*/
+            border: 3px solid coral;
+            width: 200px;
+            background-color: #fff;
+            position:absolute; /*就可以指定到時滑鼠鼠標放到的地方，會出現的位置*/
+            z-index: 99; /*不要被遮住，排順序*/
+            display: none;
+
+        }
+    </style>
+    <!-- 步驟3:設計互動效果(顯示/隱藏) -->
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){ //啟動Jquery
+            //has():尋找指定的名稱
+            $('a:has(.ttpShow)').mouseover(function(e){ //參數可以是任何值，但習慣上打e，這意思是傳出任何值出來
+                //滑鼠碰到超連結文字的時
+                //1.動態增加ttpPanel
+                //2.顯示外框
+                //3.調整座標的位置(因為外框與超連結文字太近，所以可以適當的調整)
+                //children():尋找超連結中的ttpShow類別
+                //html():取得選取氣中的內容
+                //console.log("目前座標:"+e.pageX,e.pageY); 顯示滑鼠位置
+                $('body').append('<div id="ttpPanel">'+$(this).children('.ttpShow').html()+'</div>');
+                $('#ttpPanel').css({top:(e.pageY+10)+'px', left:(e.pageX+10)+'px'}).fadeIn('fast');
+            }).mousemove(function(e){
+                //滑鼠移動的時候，外框座標位置也跟著改變
+                $('#ttpPanel').css({top:(e.pageY+10)+'px', left:(e.pageX+10)+'px'});
+            }).mouseout(function(){
+                //1. 移除動態產生的ttpPanel
+                $('#ttpPanel').remove();
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <!-- <div id="ttpPanel"></div> -->
+    <!-- 步驟1:結構 -->
+    <p>Lorem, ipsum 
+        <a href="#">dolor
+            <span class="ttpShow">toolTip內容</span>
+        </a> sit amet consectetur adipisicing elit. Voluptatum <a href='#'>officiis <span class="ttpShow">toolTip內容</span></a> commodi numquam doloribus? Fuga iste id rem dolor. Quibusdam mollitia voluptatibus facere accusantium dolores labore ipsam eum facilis quas atque?</p>
+</body>
+</html>

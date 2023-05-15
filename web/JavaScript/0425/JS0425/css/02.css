@@ -1,0 +1,57 @@
+﻿@charset "utf-8";
+a { text-decoration: none;}
+h3{ color: red;}
+
+#wrapper {
+	text-align: center;
+}
+
+.cssAnim,
+.cssAnim2,
+.cssAnim3,
+.cssAnim4 {
+	display: inline-block;
+	overflow: hidden;
+	padding: 15px 0;
+	width: 150px;
+	color: #000;
+	font-weight: bold;
+	text-align: center;
+	background-color: #cfcfcf;
+	border: #999 1px solid;
+	transition: all .5s linear;    
+}
+
+/* 背景變色 */
+.bgColor {
+	color: #fff;
+	background-color: #000;
+}
+/* 圓角 */
+.bdrRadius {
+	border-radius: 30px;
+}
+
+/* 旋轉 */
+.rotateX {
+	transform: rotateX(360deg);
+}
+
+.rotateY {
+	transform: rotateY(360deg);
+}
+
+/* 圖片 */
+.cssAnim5 {
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+	overflow: hidden;
+}
+.cssAnim5 img {
+	width: 100%;
+	transition: all 0.3s linear;
+}
+.imgScale img {
+	transform: scale(1.5);
+}

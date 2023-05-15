@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getData()">取得氣象局resource ID資料</button>
+    <div id="showData">顯示資料區</div>
+<!-- 取得氣象局第二個result下fields的資料(一個大資料內的小資料) -->
+    <script>
+        function getData(){
+            fetch("./weather.json").then(function(response){
+                return response.json();
+            }).then(function(data){ //第一個迴圈
+                let ans = document.querySelector('#showData');
+                ans.innerHTML = "";
+                for (let i=0;i<data.length;i++){ //做第二個迴圈取得真正要的資料
+                let weather = data[i]
+                ans.innerHTML = '<div>';
+                    for(let j=0;j<weather.result.fields.length;j++)
+                ans.innerHTML += weather.result.fields[j].id+'<br>';
+
+            }})
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getData()">取得JSON資料</button>
+    <div id="showData">顯示資料區</div>
+    <!-- 取出json資料方式 -->
+
+    <!-- 
+        1. 確認檔案或者網址
+        2. 建立、請求連線
+        3. 取得資料語法:
+            fetch(檔案或網址).then(function(回應物件資料的名稱){
+            console.log(回應物件資料的名稱)
+        });
+     -->
+     <script>
+        function getData(){
+        fetch("./demo.json").then(function(response){
+            return response.json();
+            //console.log(response);
+        }).then(function(data){ //將得到的資料轉為data
+            //已經取得資料，把資料顯示在畫面上
+            //取得showData的ID位置給ans
+            let ans = document.querySelector('#showData');
+            //清空顯示區的資料
+            ans.innerHTML = "";
+            for (let i=0;i<data.length;i++){
+                let prod = data[i]
+                //ans.innerHTML = ans.innerHTML +'<div>'+'品名:'+prod.prodName+'<br>價格'+prod.prodPrice+'<br>'+'說明:'+prod.prodDesc+'<hr>'+'</div>';  //如果只寫prod.prodName那就只會跑迴圈出來後的最後一筆資料
+                    //如果沒用div包起來，跑出的資料會全部在showData裡面，就黏在一起
+                ans.innerHTML += `<div>品名:${prod.prodName}<br>價格:${prod.prodPrice}<br>說明:${prod.prodDesc}<hr></div>`
+            }
+
+        });
+     }   
+     </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{ /*框框*/
+            border: 1px solid red;
+            width: 200px;
+            height: 180px;
+            display: block;
+            overflow: hidden;
+
+        }   
+
+        .box1 img{ /*框框裡的圖片*/
+            width: 100%;
+            transition: all .3s; /*轉場效果*/
+        }
+        /*.a:hover img{
+            transform: scale(1.5);
+        } 是address to hover 的img*/
+        .imgScale img{
+            transform: scale(1.5);
+        }
+    </style>
+    <script src="/jquery/js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            //動態增加類別(addClass)
+            $('.box1').hover(function(){
+                $('.box1').addClass('imgScale');
+        },function(){
+            //動態移除類別(removeClass)
+            $('.box1').removeClass('imgScale');
+        });
+        });
+    </script>
+</head>
+<body>
+    <!-- 圖片縮放效果 -->
+    <h1>圖片縮放效果</h1><hr>
+
+    <a href="#" class="box1">
+        <img src="./images/5.jpg" alt="">
+</body>
+</html>

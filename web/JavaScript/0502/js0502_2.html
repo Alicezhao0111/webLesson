@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //取得視窗寬高
+        console.log('視窗寬高=>'+window.innerwidth+','+window.innerHeight)
+        //取得螢幕寬高
+        console.log('螢幕寬高=>'+screen.width+','+screen.height);
+        //取得網址列內容
+        console.log('網址=>'+window.location.href);
+        //更改網址列的內容，會發生跳轉往頁
+        //window.location.href="http://www.google.com";
+
+        //取得網頁標題
+        console.log('網頁標題=>'+document.title)
+        //更改網頁標題
+        document.title = 'My Web';
+
+        //取得body標籤
+        console.log(document.body);
+        //更改body內容
+        document.body.innerHTML = "Hello";
+
+        //取得body id名稱
+        console.log('body的id名稱')
+
+
+    </script>
+</body>
+</html>

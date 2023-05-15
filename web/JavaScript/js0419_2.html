@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--使用JS控制CSS變化-->
+    <script>
+        //結果
+        document.write('結果:');
+        //let a = 30;
+        let a = Number (prompt('分數',''));
+        if (a>=60){
+            //及格
+            document.write('<span style="color:blue">及格</span>'); //一定要外單內雙引號，或是外雙內單，不能同樣的引號
+        }else{
+            //不及格
+            document.write("<span style='color:red;'>不及格</span>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1=[0,0,0,0,0,0,];
+        for(let i = 0; i<arr1.length;i++){
+            let num = (Math.random()*49)+1;
+            num = Math.floor(num);
+            //檢查陣列中是否有重複值 -->indexOf(檢查的值)
+            if(arr1.indexOf(num)>=0){
+                //如果重複，再重新產生新的變數
+                //console.log('重複了');
+                i=i-1; //若發生重複，則i值要倒扣回來，回到上面的i++，不然原先的位置會空掉
+                continue;
+            }
+            arr1[i] = num;
+        }
+        console.log(`排序前->${arr1}`);
+        //得到排序前的最小值 最大值
+        let min = arr1[0];
+        let max = arr1[0];
+        for(let a=1; a<arr1.length;a++){
+            if(arr1[a]>max){
+                max=arr1[a];
+            }
+            if(arr1[a]<min){
+                min=arr1[a];
+            }
+        }
+        console.log(min)
+        console.log(max)
+        
+        //遞減顯示
+        let arr2=[]; //表示沒有限制次數的陣列
+        let j=0;
+        for(let i=arr1.length-1;i>=0;i--){
+            arr2[j]=arr1[i];
+            j++;
+        }
+        console.log(`遞減排序->${arr2}`);
+
+    </script>
+</body>
+</html>

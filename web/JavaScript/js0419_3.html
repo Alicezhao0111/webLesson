@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery/jquery-3.6.4.min.js"></script> <!--source來源 jquery -->
+</head>
+<body>
+    <h1>QA</h1>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis soluta odio, quia laboriosam quam a accusantium veritatis dolore consequatur quo.
+    </p>
+    <script>
+        //jquery下指令前面都要$
+       //淡入淡出效果//
+        $(function(){
+            //左鍵一下h1標籤時
+            $('h1').click(function(){
+                //淡出p段落內容
+                //$('p').fadeout();
+                //自動判定是否淡入或淡出
+                //1秒=1000毫秒
+                $('p').fadeToggle(1200); //toggle代表雙向，此為淡入加淡出，因為是方法，所以後面要加小括號，裡面可放速度也可不放
+
+            });
+            //淡出p段落內容
+
+        });
+        //基本語法
+        /*
+        $(document).ready(function(){
+            //撰寫程式碼的地方
+
+        });
+        */
+
+        //簡易語法
+        /*
+        $(function(){
+            //撰寫程式碼的地方
+        });
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    #m1, #m2, #m3{
+        width: 500px;
+        height: 300px;
+        float: left;
+
+    }
+    #m1{background-color: rgb(196, 151, 186);}
+    #m2{background-color: rgb(159, 174, 202);}
+    #m3{background-color: rgb(189, 167, 106);}
+    #wrapper{
+        /*此寬度必須是>=所有滑動區的小區塊合計的寬度(這邊是1500)*/
+       /* 水平滑動 */
+        width: 2000px; 
+        height: 300px;
+    }
+    #container{
+        /*border: 1px solid rgb(243, 9, 9);*/
+        width: 500px;
+        height: 300px;
+        /*隱藏超出範圍的內容*/
+        overflow: hidden;
+    }
+    </style>
+    <!-- jQuery主程式 -->
+    <script src="./jquery/js/jquery-1.11.3.min.js"></script>
+    <!-- 滑動的主程式 -->
+    <script src="./jquery/js/jquery.scrollTo.min.js"></script>
+    <script src="./jquery/js/jquery.localScroll.min.js"></script>
+    <script>
+        $(function(){
+            $('nav').localScroll({/*透過導覽列，觸發裡面的內容作滑動*/
+                target:'#container',
+                axis:'x', /*滑動方向:水平滑動為x,垂直滑動為y，但如果要垂直滑動，上面的float要用掉，才會有東西上來，且wrapper區塊的尺寸改成w500 h>=900*/
+                duration:500
+            }); 
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 導覽列 -->
+    <nav>
+        <a href="#m1">Menu1</a>
+        <a href="#m2">Menu2</a>
+        <a href="#m3">Menu3</a>
+    </nav>
+    <!-- 滑動區 -->
+    <div id="container">
+        <div id="wrapper">
+            <div id="m1">1</div>
+            <div id="m2">2</div>
+            <div id="m3">3</div>
+        </div>
+    </div>
+</body>
+</html>

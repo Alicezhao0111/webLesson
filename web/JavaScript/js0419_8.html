@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帶有按鈕的圖片輪播</title>
+
+
+    <style>
+        img{
+            width: 600px;
+            height: 450px;
+        }
+        header{
+            /* border: 1px solid red; */
+            width: 600px;
+            height: 450px;
+            position:relative; /*相對定位:當作基準點 */
+        }
+        /*導覽按鈕*/
+        #nav{
+            /* border: 1px solid yellow; */
+            right: 20px;
+            bottom: 20px;
+            position: absolute; /*絕對定位*/
+            z-index: 9999; /*調整順序，字不會被壓在下面(大於0式往上調整，小於0式往下調整)*/
+        }
+        #nav a{ 
+            margin-left: 10px;
+            color: #fff;
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 50%; /*產生正圓形*/
+            display: inline-block; /*因為超連結是行內元素，不能改寬高，所以要變成區塊元素*/ 
+            width: 20px;
+            height: 20px;
+            text-align: center; /*文字水平對齊*/
+            line-height: 20px; /*垂直置中:行高值=高度值*/
+            /*把數字隱藏*/
+            font-size: 0;
+        }
+        /*當導覽列中的超連結被滑鼠碰到時，底色改變*/
+        #nav a:hover{ /*元素，用:*/
+            background-color: aqua;
+            color: black;
+        }
+        /*作用中的按鈕變色*/
+        #nav a.activeSlide{ /*超連結的某個狀態，所以用. activeSlide是在jquery裡的一個類別名稱*/
+            background-color: blueviolet;
+
+        }
+        
+    </style>
+
+</head>
+<body>
+    <header>
+        <div id="imgCycle"> 
+            <img src="./jquery/images/1.jpg" alt="">
+            <img src="./jquery/images/10.jpg" alt="">
+            <img src="./jquery/images/11.jpg" alt="">
+            <img src="./jquery/images/12.jpg" alt="">
+            <img src="./jquery/images/2.jpg" alt="">
+    </div>
+    <!-- <div id="nav"></div> 寫在下面的jquery.after('<div id="nav">')所以這邊不用-->
+    </header>
+
+    <script src="./jquery/jquery-3.6.4.min.js"></script>
+    <!--輪播函式庫套件(plugin)-->
+    <script src="./jquery/js/jquery.cycle.all.js"></script>
+    <!--使用輪播效果-->
+
+    <script>
+        $(function(){
+            
+            $('#imgCycle').after('<div id="nav">').cycle({
+                fx:'fade',
+                fx:    'zoom', 
+                timeout:1000, 
+                pager:'#nav' //顯示輪播按鈕的數字
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+@charset "UTF-8"; /*一定要寫在第一行 */
+body{
+    background: url(images/images/bg.jpg);
+}
+.box {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}

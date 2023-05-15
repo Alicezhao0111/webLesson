@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //一般建立物件的方式，使用new識別字
+        let people = new Object();
+        //建立屬性成員
+        people.name = 'xxx';
+        people.age=20;
+        //建立方法成員，必須是函式
+        people.sayHi=function(){
+            console.log("Hi");
+        }
+        //使用物件
+        //呼叫物件中的方法成員
+        people.sayHi();
+        //呼叫物件中的屬性成員
+        console.log(people.name);
+
+        //使用物件方法二:使用json物件
+        //語法:{
+        //     成員名稱1: 資料1,
+        //     成員名稱2: 資料2,
+        //     ...
+        //       }
+
+        //使用JSON建立物件
+        let obj2 ={
+            name:'xxx',
+            age: 20,
+            sayHi: function(){
+                console.log('Hi')
+            },
+            h:160,
+            w:50
+        };
+        //使用物件
+        console.log(obj2.name);
+        console.log(obj2.h);
+        obj2.sayHi();
+
+
+        let obj3={
+            h: 155,
+            w: 45,
+            // bmi: function(){Math.round(w/((h/100)*(h/100)))// (在函式裡面不能直接用w,h因為這是在obj3裡面的定義，在這FUNCTION裡頭不代表意義)
+            bmi: function(){
+                console.log(obj3.w/((obj3.h/100)*(obj3.h/100)))
+            }    
+        };
+        obj3.bmi();
+
+        //使用平方的方法 Math.pow(數值，次方)
+        let myBmi = Math.round(obj3.w/Math.pow((obj3.h/100),2));
+        console.log(myBmi);
+        
+    </script>
+</body>
+</html>

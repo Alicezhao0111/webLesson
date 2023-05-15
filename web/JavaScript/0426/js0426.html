@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 陣列: 連續性且資料相同 -->
+    <!-- 可運用地方:ex 表單中下拉式選項，使用陣列方便管理 -->
+   
+    <script>
+        
+        //同資料(數字陣列、文字陣列...)
+        const arr1=[1,2,3];
+        console.log(arr1);
+        //console.log(arr1.length);//陣列長度 //length是屬性(淺藍色字眼)，屬性可以直接使用，後面不用加小括號，如果是淺黃色(method)則後面不管有沒有放東西，都要加小括號
+        //console.log(arr1[0]);//陣列第一的值
+        //console.log(arr1[1]);//陣列第二的值
+        //console.log(arr1[2]);//陣列第三的值
+        //使用陣列方式來印出陣列內容
+        for(let i=0;i<=arr1.length-1;i++){ //或是寫i<arr1.length
+            console.log(arr1[i]);
+        }
+        //arr1[1]=5; //指定陣列位置改變值
+        //console.log(arr1[1]);
+
+        //使用迴圈方法來改變陣列內容(希望全部都*2)
+        for(let i=0; i<arr1.length;i++){
+            arr1[i]=arr1[i]*2;
+        }
+        ////使用迴圈方式來印出陣列內容
+        for(let i=0; i<arr1.length;i++){
+            console.log(arr1[i]);
+        }
+
+        //不同資料的陣列(數字與非數字)
+        const arr2 = ['one',2,'三'];
+        console.log(arr2);
+
+        //陣列中有陣列
+        const arr3 = [
+            [1,2,3], //不同陣列間要","隔開
+            ['one',2,'three']
+        ];
+        console.log(arr3);
+        //得到arr3中的3
+        console.log(arr3[0][2]);
+        //得到arr3中的three
+        console.log(arr3[1][2]);
+        //得到arr3中的one
+        console.log(arr3[1][0]);
+
+        //陣列中的物件
+        const arr4 =[
+            //物件使用{...}
+            {
+                //先建立屬性名稱: 屬性值
+                name: "王小明",
+                age:18,
+                height:170,
+                weight:66,
+                score:[90,60,100]
+            },
+            [
+                {name:'Alice', type:'object'}, //在陣列中放陣列
+                {name:'Linda', type:'object'}
+            ],
+            123,
+            function sayHi(){
+                return 'Hi'
+            },
+            '我是文字資料'
+        ];
+        
+        console.log(arr4);
+        console.log(arr4[0].name); //找出陣列中的物件裡的值:name 前面要加小數點
+        console.log(arr4[0].score[2]); //找出陣列中的物件裡的值:score裡的100分
+
+        console.log(arr4[1][0]); //取得{name:'Alice', type:'object'}
+        console.log(arr4[3]); //取得陣列中的函式
+
+        //取得陣列中的最後一個資料 --> 使用陣列總長度-1來取得最後的資料
+        console.log(arr4[arr4.length-1]); //因為陣列是從0開始
+
+        const arr5 = [1,2,,,3];
+        console.log(arr5[3]); //取得undefined (因為是空的)
+
+        const arr6=[1,2,3,4,5];
+        console.log(arr6);
+        arr6[8]=90
+        console.log(arr6); //得出來 1,2,3,4,5,empty*3,90
+
+    </script>
+
+    
+</body>
+</html>

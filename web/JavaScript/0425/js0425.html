@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 步驟2: CSS -->
+    <style>
+
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        #filterBtn{
+            padding:50px 0;
+        }
+        #filterBtn a{ /*要特別拿出來寫，不然會變動整個a*/
+            border: 1px solid #ccc;
+            padding: 5px 30px;
+            margin: 0 10px;
+            border-radius: 30px;
+            background-color: #eee;
+            /*border: solid red;*/
+        }
+        #filterBtn a:hover{
+            background-color: #fff;
+        }
+        /*準備好給JS動態使用，被點選到的效果(白底粗體紅字)*/
+        #filterBtn a.active{ /*要搭配js效果才會出來*/
+            color: rgb(38, 0, 255);
+            font-weight: bold; /*粗體字*/
+            background-color: #fff;
+        }
+        /*圖片排列*/
+        #filterList ul{
+            border: 1px solid red;
+            text-align: center;
+            width: 800px;
+            margin: 0 auto; /*margin left right都auto 的簡寫，但一定要先設寬度*/
+            padding: 0;
+         }
+        #filterList ul li{
+            float:left;
+            margin: 5px;
+            width: 150px;
+            list-style: none; /*點點去掉*/
+        }
+        #filterList ul li img{ width: 150px;}
+
+        #wrapper{
+            /*border: 1px solid red;*/
+            width: 800px;
+            margin-left: auto; /*margin left right 可讓頁面水平置中(auto視內容自動)*/
+            margin-right: auto;
+            text-align: center; /*內容水平置中*/
+        }
+    
+    </style>
+    <!-- 步驟3: JS -->
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script>
+    $(function(){
+        //先設變數，之後彈性比較大
+        //取得所有按鈕
+        var setFilter = $('#filterBtn'); //id名稱，跟下面的不一樣
+        //宣告篩選按鈕中的a元素
+        var filterBtn = setFilter.find('a');
+        //取得ALL按鈕
+        var btnAll = $('.allItem'); /*用jq的方式得到這個類別名稱*/
+        //取得所有圖片中的元素
+        var setList=$('#filterList');
+        //單一取得某一個li元素
+        var filterList = setList.find('li');
+        //取得篩選後列表中的寬度 (因為篩選後得出的寬度會依圖片數量變化)
+        var listWidth = filterList.outerWidth();
+      
+        //------處理篩選後的結果-----
+        filterBtn.click(function(){ //篩選按鈕被按下(左鍵一下)時
+            //檢查是否被點選狀態，不是的話才執行篩選
+            //使用not運算子(!)
+            // == > 有變成沒有
+            // ==> 沒有變成有
+            if(!($(this).hasClass('active'))){ //不是被點選狀態 //this在這邊就是按下的按鈕
+                //目前被點選的按鈕類別保存起來給變數 filterClass
+                //attr()==>尋找到指定"屬性"的"值"
+                var filterClass = $(this).attr('class');
+
+                //使用each()方法，逐一取得對應類別的圖片(類似迴圈的用途)
+                filterList.each(function(){
+                    //檢查li中是否有被篩選的類別
+                    if($(this).hasClass(filterClass)){
+                        //有找到
+                        //顯示圖片
+                        //1.調整寬度
+                        $(this).css({display:'block'}).stop().animate({width:listWidth},1500); //1500是毫秒
+                        //2.調整圖片透明度
+                        //find()方法，找到所有的li，並將它停下來
+                        $(this).find('*').stop().animate({opacity:'1'},1500); //opacity 1 顯示出來
+                    }else{
+                        //沒找到
+                        //隱藏圖片(動畫animate)
+                        $(this).find('*').stop().animate({opacity:'0'},1000);
+                        $(this).stop().animate({width:'0'},1000,function(){
+                            $(this).css({display:'none'});
+                        }); //不顯示的圖片寬度變0，有顯示出的圖片才可以往前跑
+                    }
+                });
+                //清除所有篩選按鈕上的active類別
+                filterBtn.removeClass('active');
+                //將目前的篩選按鈕加上active類別 (先清除再指定，比較方便)
+                $(this).addClass('active');
+
+            }
+
+    });
+
+    //全部顯示
+    btnAll.click(function(){
+        filterList.each(function(){ //迴圈，執行以下操作
+            $(this).css({display:'block'}).stop().animate({width:listWidth},1500); //這邊THIS就是li
+            $(this).find('*').stop().animate({opacity:'1'},1500); //*2代表全部
+        });
+    });
+    btnAll.click(); //讓一進來就是在all的狀態
+    });
+    </script>
+</head>    
+<body>
+    <!-- 步驟1: 結構 -->
+    <div id="wrapper">
+        <!-- 篩選按鈕 -->
+        <div id="filterBtn">
+            <!-- 快捷鍵a.allItem -->
+            <a href="#" class="allItem">ALL</a> 
+            <a href="#" class="cats">CATS</a>  
+            <a href="#" class="food">FOOD</a> 
+            <a href="#" class="view">VIEW</a> 
+        </div>
+
+        <!-- 圖片顯示區  -->
+        <!-- 圖片加上類別class，才可以選到甚麼項目跑出甚麼照片(搭配JQ) -->
+        <div id="filterList"> 
+            <ul>
+                <li class="view"><img src="./JS0425/images/view1.jpg" alt=""></li>
+                <li class="cats"><img src="./JS0425/images/cats1.jpg" alt=""></li>
+                <li class="food"><img src="./JS0425/images/food1.jpg" alt=""></li>
+                <li class="view"><img src="./JS0425/images/view2.jpg" alt=""></li>
+                <li class="cats"><img src="./JS0425/images/cats2.jpg" alt=""></li>
+                <li class="food"><img src="./JS0425/images/food2.jpg" alt=""></li>
+                <li class="view"><img src="./JS0425/images/view3.jpg" alt=""></li>
+                <li class="cats"><img src="./JS0425/images/cats3.jpg" alt=""></li>
+                <li class="food"><img src="./JS0425/images/food3.jpg" alt=""></li>
+                <li class="view"><img src="./JS0425/images/view4.jpg" alt=""></li>
+                <li class="cats"><img src="./JS0425/images/cats4.jpg" alt=""></li>
+                <li class="food"><img src="./JS0425/images/food4.jpg" alt=""></li>
+                <li class="cats"><img src="./JS0425/images/cats6.jpg" alt=""></li>
+                <li class="food"><img src="./JS0425/images/food5.jpg" alt=""></li>
+                <li class="cats"><img src="./JS0425/images/cats2.jpg" alt=""></li>
+
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

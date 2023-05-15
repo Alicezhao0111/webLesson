@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            /*border:1px solid red;*/
+            position: relative; /*不然對位會對到body*/
+            /*與圖片同寬高*/
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+        }
+        .imgbox img{
+            position:absolute; /*對imgbox，讓他重疊,absolute 會自動去找relative*/
+        }
+        .imgbox .mask{
+            position: absolute;
+            background-color: #000;
+            /* background-color: rgba(0, 0,0, .5); 不透明度 */
+            opacity: 0;
+             /*與圖片同寬高*/
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            transition: all 1s;
+        }
+        
+        
+        .imgbox .mask a{
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: none;
+        }
+        .imgbox:hover .mask{
+            opacity:.5;
+        }
+
+        .imgbox2{
+            /*border:1px solid red;*/
+            position: relative; /*不然對位會對到body*/
+            /*與圖片同寬高*/
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+        }
+        .imgbox2 img{
+            position:absolute; /*對imgbox，讓他重疊,absolute 會自動去找relative*/
+        }
+        
+        .imgbox2 .mask2{
+            position: absolute;
+            background-color: #000;
+            /* background-color: rgba(0, 0,0, .5); 不透明度 */
+            opacity: 0;
+             /*與圖片同寬高*/
+            width: 0px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            transition: all 1s;
+        }
+
+        .imgbox2 .mask2 a{
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .imgbox2:hover .mask2{
+            opacity: .5;
+            width: 100%;
+        }
+        
+        .imgbox3{
+            /*border:1px solid red;*/
+            position: relative; /*不然對位會對到body*/
+            /*與圖片同寬高*/
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+        }
+        .imgbox3 img{
+            position:absolute; /*對imgbox，讓他重疊,absolute 會自動去找relative*/
+        }
+        
+        .imgbox3 .mask3{
+            position: absolute;
+            background-color: #000;
+            /* background-color: rgba(0, 0,0, .5); 不透明度 */
+            opacity: 0;
+             /*與圖片同寬高*/
+            width: 200px;
+            height:0 px;
+            text-align: center;
+            line-height: 200px;
+            transition: all 1s;
+        }
+
+        .imgbox3 .mask3 a{
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .imgbox3:hover .mask3{
+            opacity: .5;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 圖片覆蓋效果 -->
+    <!-- 建立一個對齊的基礎點 -->
+    <div class="box imgbox">
+        <p>整個覆蓋 </p>
+        <!-- 圖 -->
+        <img src="http://picsum.photos/id/100/200" alt="">
+        <!-- 遮色區 -->
+        <div class="mask">
+            <a href="#">More</a>
+        </div>
+    </div>
+    <div class="box imgbox2">
+        <p>左到右覆蓋 </p>
+        <!-- 圖 -->
+        <img src="http://picsum.photos/id/1/200" alt="">
+        <!-- 遮色區 -->
+        <div class="mask2" >
+            <a href="#">More</a>
+        </div>
+    </div>
+    <div class="box imgbox3">
+        <p>上到下覆蓋 </p>
+        <!-- 圖 -->
+        <img src="http://picsum.photos/id/99/200" alt="">
+        <!-- 遮色區 -->
+        <div class="mask3">
+            <a href="#">More</a>
+        </div>
+    </div>
+</body>
+</html>

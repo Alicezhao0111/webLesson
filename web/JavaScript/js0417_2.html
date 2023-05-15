@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        //建立加法運算的函式，沒有回傳值
+        function add(n1,n2){
+            console.log(n1+n2);
+        }
+        //呼叫加法函式
+        add(5,3);
+        add(10,-5);
+        add(10,'我是文字');
+        add('Hi','JavaScript');
+*/
+        //建立加法運算的函式，沒有回傳值
+        function add(n1,n2){
+            console.log(n1+n2);
+            let result = n1+n2;
+            return result; //結束函式並且把result回傳值往外丟
+            //return; (結束函式且沒有回傳值)
+        }
+        //呼叫加法函式
+        let value = add (5,3);
+        console.log(value)
+        //不一定要這樣做，僅有要回傳值的時候須這樣
+
+    </script>
+</body>
+</html>

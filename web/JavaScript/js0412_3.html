@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //輸入-1強制結束
+        //檢查分數是否小於零
+        //如果是，結束輸入
+        //如果不是:
+        //是否及格?
+        //分數加總
+      
+      //迴圈結束後，總平均
+     //以上為題目
+
+    // 總分、總平均、及格人數、不及格人數 因為資料要被保留 所以要宣告在迴圈外 才不會被消失
+    //總分
+    let sum=0;
+    //總平均
+    let avg=0;
+    //及格人數
+    let pass=0;
+    //不及格人數
+    let fail=0;
+    while(true){
+        // Number ==> 轉換為數字資料
+        // Parseint==>轉換為整數資料 (去小數)
+        let score = (prompt("請輸入分數:","")); //將字串轉換為數字資料，這樣之後三個等於才不會出錯(數值)
+        console.log(`輸入分數:${score}`);
+        if(score === -1){
+            break; //如果是，結束輸入
+        } else if(score<0 || score>100){
+            alert("不是有效分數,請重新輸入0-100");
+            continue;
+        }
+        
+        else if (score>=60) {
+            pass++;
+        }else if (score<60) {
+           fail++;
+            }
+             //分數加總
+             sum=sum+score;
+        }
+        //總平均
+        if(pass+fail>0){
+        avg = sum / (pass + fail);} //分母不能為0
+        console.log(`及格人數${pass}`);
+        console.log(`不及格人數${fail}`);
+        console.log(`總分${sum}`);
+        console.log(`總平均${avg}`);
+            
+        
+    </script>
+</body>
+</html>

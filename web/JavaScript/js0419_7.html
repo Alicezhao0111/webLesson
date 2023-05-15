@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖片輪播</title>
+    <!--jquery函式庫-->
+    <script src="./jquery/jquery-3.6.4.min.js"></script>
+    <!--輪播函式庫套件(plugin)-->
+    <script src="./jquery/js/jquery.cycle.all.js"></script>
+    <!--使用輪播效果-->
+
+    <script>
+        $(function(){
+            //找到輪播的區域，因為式id需加#去找到
+            $('#imgCycle').cycle({
+                fx:    'zoom', //找到的jquery套件 //下面還有參數後面須加逗號隔開
+                timeout:500, //輪播速度
+            });
+        });
+    </script>
+
+    <style>
+        img{
+            width: 600px;
+            height: 450px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--假圖: picsum 網頁-->
+    <!--小駝峰的命名方式:第二個單字開始的自首為大寫-->
+    <div id="imgCycle"> <!--加一個div框框，將想要有輪播效果的圖片放入-->
+    <img src="./jquery/images/1.jpg" alt="">
+    <img src="./jquery/images/10.jpg" alt="">
+    <img src="./jquery/images/11.jpg" alt="">
+    <img src="./jquery/images/12.jpg" alt="">
+    <img src="./jquery/images/2.jpg" alt="">
+    </div>
+</body>
+
+</html>

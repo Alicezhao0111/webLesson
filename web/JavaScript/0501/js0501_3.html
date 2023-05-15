@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 實作物件練習 -->
+    <script>
+        //建立一個以人為主的物件
+        //物件中要包含以下成員
+        //姓名、身高、體重、年齡
+        //自我介紹的函式(Hello, 我是xxx，今年xx歲)
+        let people = new Object();
+        people.name = 'Linda';
+        people.h = 152;
+        people.w = 50;
+        people.age = 20;
+        people.intro=function(){
+            console.log(`Hello, 我是${people.name}，今年${people.age}歲`)};
+        people.intro();
+        
+    //建立一個函式，計算bmi=,並且顯示出來
+    //bmi = 體重/身高(公尺)的平方
+
+    let person = new Object();
+    person.w = 50;
+    person.h = 160;
+
+
+    // person.bmi = function(){
+    //     console.log(Math.round(person.w/((person.h/100)*(person.h/100))))
+    // };
+    // person.bmi(); 
+
+    //要看bmi處在甚麼標準
+    person.bmi = function(){
+        let myBmi=Math.round(person.w/((person.h/100)*(person.h/100)))
+        console.log(myBmi);
+        if (myBmi < 18.5){
+            console.log('體重過輕');
+        } else if (myBmi >= 18.5 && myBmi < 24){
+            console.log('正常範圍');
+        }else{
+            console.log('異常範圍');
+            if(myBmi >= 24 && myBmi < 30){
+                console.log('過重');
+            }else if (myBmi >= 27 && myBmi <30){
+                console.log(`輕度肥胖`);
+            }else if (myBmi >= 30 && myBmi <35){
+                console.log(`中度肥胖`);
+            }else if (myBmi >=35){
+                console.log('種度肥胖');
+            }
+        }
+    };
+   person.bmi();
+
+   person.bmi2 = function(){
+        let myBmi2=Math.round(person.w/((person.h/100)*(person.h/100)))
+        return myBmi2; //用迴圈return將值丟出來
+    }
+    console.log(people.bmi2());
+    let BMI = people.bmi2();
+
+
+    
+
+    </script>
+</body>
+</html>

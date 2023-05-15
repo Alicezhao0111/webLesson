@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 事件處理流程 -->
+    <!-- 1.在甚麼標籤上
+        2. 發生甚麼事(是一種行為) 
+        3.做甚麼處理-->
+        <!-- 常見事情種類 (不同時間點)-->
+        <!-- 1. 左鍵一下時:click
+        2. 滑鼠移入==>mouseover
+        3. 滑鼠移出 ==> mouseout
+        4. 滑鼠按下不放 ==> mousedown 
+        5. 滑鼠放開 ==> mouseup (彈起來時)
+        6. 滑鼠移動 ==> onmousemove-->
+    <style>
+        marquee{background-color: yellow;
+            
+        }
+    </style>
+</head>
+<body>
+    <marquee onmouseover="stop();" onmouseout="start();">123</marquee>
+    <!-- <button 
+    onclick="console.log('onclick');"
+    onmouseover="console.log('onmouseover');"
+    onmouseout="console.log('onmouseout');"
+    onmousedown="console.log('onmousedown');"
+    onmouseup="console.log('onmouseup')";
+    >打招呼</button> -->
+    <button onclick="sayHi()">打招呼</button> 
+    <div id="showMsg"></div>
+    <script>
+        function sayHi(){ /*透過按鈕去處理別人*/
+            console.log('Hi');
+            document.querySelector('#showMsg').innerHTML='Hi';
+        }
+    </script>
+        <!-- 另一種事件處理 -->
+    <button onclick="sayHi2(this)">打招呼2</button> <!--this 是指button，所以會改在按鈕身上-->
+    <div id="showMsg2"></div>
+    <script>
+        function sayHi2(elem){ /*elem是指任何參數*/
+            elem.innerHTML='Hi2'
+
+        }
+    </script>
+
+    <button onmousedown="down(this);"
+            onmouseup="up(this);">變色</button>
+
+            <script>
+                function down(elem){
+                    elem.style.color='red';
+                }
+                function up(elem){
+                    elem.style.color='black';
+                }
+            </script>
+
+    
+</body>
+</html>

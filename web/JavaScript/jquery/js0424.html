@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="./js/jquery-1.11.3.min.js"></script>
+     <script src="./js/jquery.jcarousellite.min.js"></script> <!--一定要照順序開來源-->
+
+     <script>
+        $(function(){
+            $("#carousel").jCarouselLite({ //小駝峰寫法，第二個單字開始開頭大寫
+                auto:1000, //多久轉動一次
+                scroll:1, //每次轉動的張數
+                visible:3, //每次看到的張數
+                speed:500 //轉動的速度
+
+            });
+        });
+     </script>
+     <style>
+        #carousel{
+            background-color: rgb(48, 22, 163);
+            padding: 5px; /*框框到圖片的距離*/
+        }
+        #carousel img{ /*必須針對輪播裡的圖片設定尺寸，不然會跑不出來，因為系統不知道要多大*/
+            width: 150px;
+            height: 120px;
+            /*取消圖片下方多於空白(可在上面加border看框框)，可以使用垂直對其靠上或靠下*/
+            vertical-align: top; 
+            margin: 5px; /*圖片跟圖片之間的距離*/
+        }
+     </style>
+</head>
+<body>
+    <!-- 旋轉木馬 -->
+    <div id="carousel">
+        <ul>
+            <!-- <li><img src="./images/1.jpg" alt="不見了"></li> -->
+            <li><img src="./images/1.jpg" alt=""></li>
+            <li><img src="./images/2.jpg" alt=""></li>
+            <li><img src="./images/3.jpg" alt=""></li>
+            <li><img src="./images/4.jpg" alt=""></li>
+            <li><img src="./images/5.jpg" alt=""></li>
+                
+        </ul>
+    </div>
+</body>
+</html>
