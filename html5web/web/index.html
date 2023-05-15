@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>芮塔花室</title>
     <link rel="icon" href="favicon.ico">
+    <!-- 換圖輪播CSS codepen套的 -->
+    <link rel="stylesheet" href="./CSS/carousel.css">
+    <!-- 自訂的css一定要放在最下面，權重最重 -->
     <link rel="stylesheet" href="./CSS/style.css">
+    
     
 </head>
 <body>
@@ -36,7 +40,67 @@
     <!-- 主要內容區 -->
     <main>
         <!-- banner區 -->
-        <div id="banner"></div>
+        <div id="banner">
+            <div class="content-slider">
+                <!-- 有checked表示有用JQuery控制 -->
+                <input type="radio" id="banner1" class="sec-1-input" name="banner" checked> 
+                <input type="radio" id="banner2" class="sec-1-input" name="banner">
+                <input type="radio" id="banner3" class="sec-1-input" name="banner">
+                <input type="radio" id="banner4" class="sec-1-input" name="banner">
+                <input type="radio" id="banner5" class="sec-1-input" name="banner">
+                <div class="slider">
+                  <div id="top-banner-1" class="banner">
+                    <div class="banner-inner-wrapper">
+                      <h2>Creative Template</h2>
+                      <h1>Welcome<br>to MoGo</h1>
+                      <div class="line"></div>
+                      <div class="learn-more-button"><a href="#section-2">Learn More</a></div>
+                    </div>
+                  </div>
+                  <div id="top-banner-2" class="banner">
+                    <div class="banner-inner-wrapper">
+                      <h2>What We Do</h2>
+                      <h1>Great<br>MoGo</h1>
+                      <div class="line"></div>
+                      <div class="learn-more-button"><a href="#section-4">Learn More</a></div>
+                    </div>
+                  </div>
+                  <div id="top-banner-3" class="banner">
+                    <div class="banner-inner-wrapper">
+                      <h2>Here We Are</h2>
+                      <h1>We Are<br>MoGo</h1>
+                      <div class="line"></div>
+                      <div class="learn-more-button"><a href="#section-6">Learn More</a></div>
+                    </div>
+                  </div>
+                  <div id="top-banner-4" class="banner">
+                    <div class="banner-inner-wrapper">
+                      <h2>Our Contacts</h2>
+                      <h1>Welcome<br>to MoGo</h1>
+                      <div class="line"></div>
+                      <div class="learn-more-button"><a href="#main-footer">Learn More</a></div>
+                    </div>
+                  </div>
+                  <div id="top-banner-5" class="banner">
+                    <div class="banner-inner-wrapper">
+                      <h2>testtest</h2>
+                      <h1>Welcometest<br>to MoGotest</h1>
+                      <div class="line"></div>
+                      <div class="learn-more-button"><a href="#main-footer">Learn More</a></div>
+                    </div>
+                  </div>
+                </div>
+                <nav>
+                  <div class="controls">
+                    <label for="banner1"><span class="progressbar"><span class="progressbar-fill"></span></span><span>01 Intro</span> </label>
+                    <label for="banner2"><span class="progressbar"><span class="progressbar-fill"></span></span><span>02 Work</span></label>
+                    <label for="banner3"><span class="progressbar"><span class="progressbar-fill"></span></span><span>03 About</span></label>
+                    <label for="banner4"><span class="progressbar"><span class="progressbar-fill"></span></span><span>04 Contacts</span> </label>
+                    <label for="banner5"><span class="progressbar"><span class="progressbar-fill"></span></span><span>05 test </span></label>
+                  </div>
+                </nav>
+              </div>
+        </div>
          <!-- NEWS區 -->
         <section id="news">
             <h2 class="title">NEWS</h2>
@@ -141,5 +205,12 @@
     </main>
     <!-- 頁尾區 -->
     <footer>Copyright © 2023 芮塔花室 All rights reserved</footer>
+
+    <!-- JS最好放在body最下面，因為會有順序權重問題 -->
+    <!-- Jquery CDN 3.7.0原始碼，一定要放在最下面，先被執行-->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- 自訂JS，一定要放在最下面，因為要最後被執行 -->
+    <script src="../js/script.js"></script>
+
 </body>
 </html>

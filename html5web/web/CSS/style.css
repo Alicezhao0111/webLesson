@@ -67,7 +67,7 @@ img{
 	display: flex; /*變水平(預設)排*/
 	justify-content: space-between; /*主軸方向齊頭齊尾*/
 	padding: 20px;
-	z-index: 1; /*永遠在最前面*/
+	z-index: 999; /*永遠在最前面*/
 }
 .menu {
 	padding: 10px 15px;
@@ -199,6 +199,19 @@ section{
 	text-decoration: none;
 
 }
+#news a:hover{
+	text-decoration: underline;
+}
+@media(max-width:992px){
+	#news .list_item:last-child{ /*最後一個(孩子)藏起來*/
+		display: none;
+	}
+}
+@media (max-width:576px){
+	#news .list_item:nth-child(n+2){ /*指定第幾個孩子以後藏起來*/
+		display: none;
+	}
+}
 
 /*service區*/
 #service{
@@ -245,6 +258,25 @@ section{
 .service_4{
 	background-image: url(../images/pt_svc4.jpg);
 }
+
+@media(max-width:992px){
+	#service .list_box{
+		flex-direction: column;
+		height: 70vh;
+	}
+	#service .list_item{
+		margin: 2vh 0;
+	}
+	#service .list_item:nth-child(n+3){ /*第三個後面開始藏起來*/
+		display: none;
+	}
+}
+@media(max-width:576px){
+	#service .list_item:nth-child(n+2){
+		display: none;
+	}
+}
+
 /*video區*/
 #video{
 	background-color: #ECF0F4;
@@ -255,6 +287,18 @@ section{
 
 }/*後面的video是標籤的video*/
 
+/* 會偵測992px以下都會套(992是平板的尺寸) */
+@media (max-width:992px){
+	#video{
+		height: auto; /*版面才不會異常的大*/
+		padding: 5vh 0;
+	}
+	#video video{
+		width: 85%;
+		height: auto; /*才可以蓋掉前面的70vh*/
+	}
+}
+
 /*About 區*/
 #about{
 	position: relative; /*為了給about video的position對位*/
@@ -264,6 +308,7 @@ section{
 	top: 0;
 	left: 0;
 	z-index: -1;
+	/*物件RWD填滿*/
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
@@ -309,6 +354,21 @@ section{
 	background: #d80b0bb0;
   }*/
 
+  @media(max-width:992px){
+	#about div{
+		width: 85%;
+	}
+	#about p{
+		font-size: 1.1rem;
+		line-height: 1.5rem;
+	}
+  }
+  @media (max-width:576px){
+	#about div{
+		padding: 0 20px;
+	}
+  }
+
 /*Contact區*/
 #contact{
 	background-image: url(../images/bg_contact.jpg);
@@ -320,6 +380,27 @@ section{
 #message_form{
 	width: 35%;
 }
+
+@media(max-width:992px){
+	#message_form{
+		width: 35%;
+	}
+	#message_form label{
+		margin: 30px 0 10px;
+	}
+	#message_form input, #message_form textarea{
+		padding: 10px 15px;
+	}
+
+	::placeholder{
+		font-size: 1rem;
+	}
+	
+	#message_form button{
+		margin: 30px auto;
+	}
+}
+
 
 
 /*提示文字*/
@@ -355,7 +436,7 @@ section{
 }
 
 #message_form label{
-	margin: 30px 0 10px;
+	margin: 20px 0 10px;
 	font-size: .85rem;
 	letter-spacing: .1rem;
 }
