@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>芮塔花室</title>
     <link rel="icon" href="favicon.ico">
+    <!-- font awesome的icon代碼套件 --> 
+    <link rel="stylesheet" href="./CSS/all.min.css"><!-- 除了這個之外，還要再加一個對應的woff2字型檔再webfonts裡，剛好路徑都叫webfonts就不用改名稱-->
     <!-- 換圖輪播CSS codepen套的 -->
     <link rel="stylesheet" href="./CSS/carousel.css">
     <!-- 自訂的css一定要放在最下面，權重最重 -->
@@ -21,21 +23,30 @@
               <img src="./images/logo_b.svg" alt="芮塔花室">
             </a>
         </h1>
-        <nav>
+        <div class="nav_box">
+          <!-- 漢堡按鈕 -->
+          <button class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <!-- 選單列 -->
+        <nav class="navigation">
            <ul class="icon"> <!-- target blank 另開視窗 -->
                 <li><a href="https://www.facebook.com/"target="_blank"class="icon-fb"></a></li>
                 <li><a href="https://www.facebook.com/"target="_blank"class="icon-ig"></a></li>
                 <li><a href="https://www.facebook.com/"target="_blank"class="icon-line"></a></li>
             </ul>
             <ul class="menu">
-                <li><a href="">HOME</a></li>
-                <li><a href="">NEWS</a></li>
-                <li><a href="">SERVICE</a></li>
-                <li><a href="">VIDEO</a></li>
-                <li><a href="">ABOUT</a></li>
-                <li><a href="">CONTACT</a></li>
+                <li><a href="#banner">HOME</a></li>
+                <li><a href="#news">NEWS</a></li>
+                <li><a href="#service">SERVICE</a></li>
+                <li><a href="#video">VIDEO</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
         </nav>
+        </div>
     </header>
     <!-- 主要內容區 -->
     <main>
@@ -92,11 +103,11 @@
                 </div>
                 <nav>
                   <div class="controls">
-                    <label for="banner1"><span class="progressbar"><span class="progressbar-fill"></span></span><span>01 Intro</span> </label>
-                    <label for="banner2"><span class="progressbar"><span class="progressbar-fill"></span></span><span>02 Work</span></label>
-                    <label for="banner3"><span class="progressbar"><span class="progressbar-fill"></span></span><span>03 About</span></label>
-                    <label for="banner4"><span class="progressbar"><span class="progressbar-fill"></span></span><span>04 Contacts</span> </label>
-                    <label for="banner5"><span class="progressbar"><span class="progressbar-fill"></span></span><span>05 test </span></label>
+                    <label for="banner1"><span class="progressbar"><span class="progressbar-fill"></span></span><span class="span_text">01 Intro</span> </label>
+                    <label for="banner2"><span class="progressbar"><span class="progressbar-fill"></span></span><span class="span_text">02 Work</span></label>
+                    <label for="banner3"><span class="progressbar"><span class="progressbar-fill"></span></span><span class="span_text">03 About</span></label>
+                    <label for="banner4"><span class="progressbar"><span class="progressbar-fill"></span></span><span class="span_text">04 Contacts</span> </label>
+                    <label for="banner5"><span class="progressbar"><span class="progressbar-fill"></span></span><span class="span_text">05 test </span></label>
                   </div>
                 </nav>
               </div>
@@ -204,7 +215,9 @@
 
     </main>
     <!-- 頁尾區 -->
-    <footer>Copyright © 2023 芮塔花室 All rights reserved</footer>
+    <footer>Copyright © 2023 芮塔花室 All rights reserved
+    <div id="gotop"><i class="fa-solid fa-angle-up"></i></div>
+    </footer>
 
     <!-- JS最好放在body最下面，因為會有順序權重問題 -->
     <!-- Jquery CDN 3.7.0原始碼，一定要放在最下面，先被執行-->

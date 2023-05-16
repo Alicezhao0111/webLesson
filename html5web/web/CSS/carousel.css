@@ -35,40 +35,41 @@
   #banner .content-slider .slider .banner .banner-inner-wrapper {
     height: 100%;
     padding-top: 25vh;
-    /*background-image: linear-gradient(transparent 20%, black 50%, transparent 75%,rgba(0,0,0,.2) 90%);*/
+    /*後面漸層陰影*/
+    background-image: linear-gradient(transparent 20%,rgba(0,0,0,.2)50%,transparent 75%, rgba(0,0,0,.3)90%);
     box-sizing: border-box;
   }
   #banner .content-slider .slider .banner .banner-inner-wrapper h2 {
-    padding-bottom: 0.3em;
+    padding-bottom: 0.3rem;
     font-family: 'Kaushan Script', cursive;
     font-weight: 400;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     text-transform: none;
   }
   #banner .content-slider .slider .banner .banner-inner-wrapper h1 {
-    font-size: 6em;
+    font-size: 6rem;
     line-height: 95%;
     font-weight: 700;
   }
   #banner .content-slider .slider .banner .banner-inner-wrapper .line {
     display: block;
-    width: 4em;
-    height: 0.1875em;
-    margin: 2.5em auto;
+    width: 4rem;
+    height: 0.1875rem;
+    margin: 2.5rem auto;
     background: #fff;
   }
   #banner .content-slider .slider .banner .banner-inner-wrapper .learn-more-button {
-    padding-bottom: 5em;
+    padding-bottom: 5rem;
     z-index: 15 !important;
   }
   #banner .content-slider .slider .banner .banner-inner-wrapper .learn-more-button a {
-    padding: 0.5em 2em;
+    padding: 0.5rem 2rem;
     text-align: center;
     font-family: Montserrat, sans-serif;
-    font-size: 0.875em;
+    font-size: 0.875rem;
     color: #fff;
     text-transform: uppercase;
-    border: 0.1875em solid #fff;
+    border: 0.1875rem solid #fff;
   }
   #banner .content-slider .slider .banner .banner-inner-wrapper .learn-more-button a:hover {
     color: #e88382;
@@ -97,7 +98,7 @@
   }
   #banner .content-slider nav {
     position: absolute;
-    bottom: 0.5em;
+    bottom: 0.5rem;
     width: 100%;
     z-index: 10;
     text-align: center;
@@ -113,26 +114,29 @@
     position: relative;
     display: inline-block;
     width: 16%;
-    height: 3.1em;
+    height: 3.1rem;
     overflow: hidden;
-    margin: 0 1em;
-    padding-top: 1em;
+    margin: 0 1rem;
+    padding-top: 1rem;
     text-align: left;
     text-transform: uppercase;
     font-family: Montserrat, sans-serif;
-    font-size: 1em;
+    font-size: 1rem;
     color: #f6eac5;
     font-weight: 400;
     cursor: pointer;
     transition: all 0.3s;
   }
+
+
+  
   #banner .content-slider nav .controls label .progressbar {
     position: absolute;
     top: 0;
     left: 0;
     height: 3px;
     width: 100%;
-    background: #f6eac5;
+    background: #a76407;
     z-index: 100;
   }
   #banner .content-slider nav .controls label .progressbar .progressbar-fill {
@@ -140,14 +144,14 @@
     width: inherit;
     height: inherit;
     margin-left: -100%;
-    background: #e88382;
+    background: #ffde4b;
   }
   #banner .content-slider nav .controls label span {
-    font-size: 1.4em;
+    font-size: 1.4rem;
     font-weight: 700;
   }
   #banner .content-slider nav .controls label:hover {
-    color: #e88382;
+    color: #6c4b04;
   }
   #banner .content-slider #banner1:checked ~ .slider #top-banner-1,
   #banner .content-slider #banner2:checked ~ .slider #top-banner-2,
@@ -189,8 +193,41 @@
       margin-left: 0;
     }
   }
+
   @media(max-width:992px){
-    .span_text{
-        display: none;
+    /*文字區塊置中*/
+    #banner .content-slider .slider .banner .banner-inner-wrapper{
+      padding-top: 35vh;
     }
+    /*進度條文字隱藏*/
+    .span_text{
+      display:none;
+    }
+    /*進度條調整尺寸不換行*/
+    #banner .content-slider nav .controls label{
+      width: 14%;
+    }
+    /*進度條變粗*/
+    #banner .content-slider nav .controls label .progressbar{
+      height: 6px;
+    }
+  }
+  @media(max-width:576px){
+    /* 標題字變小 */
+    #banner .content-slider .slider .banner .banner-inner-wrapper h1{
+      font-size: 4rem;
+    }
+    #banner .content-slider .slider .banner .banner-inner-wrapper h2{
+      font-size: 1.5rem;
+    }
+    /* 進度條容器總寬 */
+    #banner .content-slider nav .controls{
+      width: 85%;
+    }
+    /* 進度條變短、間距變小 */
+    #banner .content-slider nav .controls label{
+      width: 15%;
+      margin: 0 5px;
+    }
+  
   }
