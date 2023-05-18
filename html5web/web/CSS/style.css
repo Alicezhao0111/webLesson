@@ -645,6 +645,7 @@ footer{
 }
 
 #gotop{
+	display: none;
 	position: fixed;
 	right: 20px;
 	bottom: 20px;
@@ -653,9 +654,9 @@ footer{
 	height: 50px;
 	border-radius: 25px; /*要設定成圓角就是寬高的一半*/
 	background-color: rgba(226,114,147,0.4);
-
 	font-size: 2.2rem; /*此icon是字型，所以用font*/
 	color:#fff;
 	line-height: 50px; /*讓他水平垂直都置中*/
 	text-align: center; /*讓他水平垂直都置中*/
+	cursor: pointer;
 }
