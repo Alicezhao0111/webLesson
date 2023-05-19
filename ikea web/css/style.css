@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/* 共用 */
+img{
+    display: block;
+    width: 100%;
+}
+ul{
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+/*carousel*/
+.carousel-inner{
+    height: calc(100vh - 70px); /*符號兩旁要有空格，用於兩個元素不同尺寸單位的時候，此表示滿版狀態但扣掉導覽列70px*/
+}
+/*navbar*/
+.navbar{
+    height: 70px;
+}
+.navbar-brand{
+    display: block;
+    width: 120px;
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
+    color: rgb(63, 213, 229);
+}
+.btn{
+    width: 4rem;
+    font-size: .8rem;
+}
+.navbar-toggler{
+    border: none;
+}
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+#search_form{
+    position: relative; /*給放大鏡定位*/
+}
+.search_btn{
+    /* 取消<button>的預設樣式 */
+    background-color: transparent;
+    border:none;
+    /*自訂樣式*/
+    width: 35px;
+    height: 35px;
+    /*絕對定位*/
+    position: absolute;
+    top:0;
+    right: 0;
+}
+.icon{
+    display: flex;
+    width: 150px;
+    margin-left: 20px;
+}
+.icon li{
+    margin: 0 5px;
+}
+/* FOOD區 */
+#food{
+    display: flex;
+}
+/*平常不要亂用position，因為不好寫RWD，最好用在正常排版的元素中，不會隨便浮動的*/
+.food_pt{
+    position: relative;
+    flex: 1;
+    background-image:url('../images/+ikeaWeb素材/images/bg_s.jpg');
+    background-size: 100% 100%;
+}
+.food_pt figure{
+    position:absolute;
+}
+#food_1{
+    width: 300px;
+    top: 80px;
+    right: -60px;
+    animation: food_1 3s;
+}
+@keyframes food_1 {
+    from {top: 80px; right: 1000px; }
+    to   {top: 80px; right:-60px; }
+}
+#food_2{
+    width: 220px;
+    top: 20px;
+    left: -250px;
+    animation: food_2 3s;
+}
+@keyframes food_2 {
+    from {top:20px;left:-250px; }
+    to {top:20px;left:15px; }
+}
+.food_text{
+    flex:1;
+    margin: 50px 80px;
+}
+
+.food_text h2{
+    position: relative;
+    display: inline-flex;
+    margin-bottom: 2rem;
+}
+
+.food_text h2::before{
+    content:'';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background-color: blue;
+
+}
+.food_text h2::after{
+    content:'';
+    display: block;
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    background-color: rgba(0,68,255,0.5);
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+
+/*頁尾區*/
+footer{
+    background-color: rgb(255, 251, 0);
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+
+}
+

@@ -18,9 +18,165 @@
     <meta property="og:url" content="http://yourURL">
     <meta property="og:image" content="yourCover.jpg">
     <meta property="og:image" content="https://www.ikea.com.tw/dairyfarm/tw/uploader/image/1682562621_1000.jpg">
-<title>Document</title>
+<title>IKEA宜家家居線上購物-給你更多居家佈置靈感</title>
+<!-- bootstrap@5.3.0 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
 
+<body>
+    <header>
+    <!-- 換圖輪播 -->
+    <!-- class加carousel-fade可淡入淡出， data-bs-ride="carousel"可自動輪播 data-bs-pause="false" 可設定滑鼠懸停時仍會播放，data-bs-interval="3000"間隔時間-->
+    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="3000">
+        <!-- 輪播提示器 -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <!-- 輪播圖片 -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <!-- 原本bootstrap就有給在img的 class="d-block w-100" 這邊刪掉寫到css中-->
+            <img src="./images/+ikeaWeb素材/images/banner_1.jpg" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+            </div>
+            </div>
+        <div class="carousel-item">
+            <img src="./images/+ikeaWeb素材/images/banner_2.jpg"alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="./images/+ikeaWeb素材/images/banner_3.jpg"alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="./images/+ikeaWeb素材/images/banner_4.jpg"alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="./images/+ikeaWeb素材/images/banner_5.jpg"  alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+            </div>
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <!-- 品牌名稱及logo -->
+            <a class="navbar-brand" href="#">
+                <img src="./images/+ikeaWeb素材/images/ikea-logo.svg" alt="">
+            </a>
+            <!-- 漢堡按鈕 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- 主選單容器 -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- 主選單 -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">空間</a>
+                    </li>
+                    <!-- 下拉選單 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">產品
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">沙發扶手椅</a></li>
+                            <li><a class="dropdown-item" href="#">兒童用品</a></li>
+                            <li>
+                                <hr class="dropdown-divider"> <!-- 分隔線 -->
+                            </li>
+                            <li><a class="dropdown-item" href="#">照明燈具</a></li>
+                        </ul>
+                    </li>
+                    <!-- 下拉選單 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">找靈感
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">空間佈置靈感</a></li>
+                            <li><a class="dropdown-item" href="#">線上規劃軟體</a></li>
+                            <li>
+                                <hr class="dropdown-divider"> <!-- 分隔線 -->
+                            </li>
+                            <li><a class="dropdown-item" href="#">最新線上型錄</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <!-- 禁用按鈕 -->
+                        <a class="nav-link disabled">會員專區</a>
+                    </li>
+                </ul>
+                <!-- 搜尋欄 -->
+                <!-- 原本bootstrap有的 class="d-flex" 刪掉 -->
+                <form name="search_form" id="search_form" method="post" role="search">
+                    <input class="form-control me-2" type="search" placeholder="請輸入關鍵字" aria-label="Search">
+                    <button class="search_btn" type="submit"><img src="./images/+ikeaWeb素材/images/h-icon-1.svg" alt=""></button>
+                </form>
+                <ul class="icon">
+                    <li><a href=""><img src="./images/+ikeaWeb素材/images/h-icon-2.svg" alt=""></a></li>
+                    <li><a href=""><img src="./images/+ikeaWeb素材/images/h-icon-3.svg" alt=""></a></li>
+                    <li><a href=""><img src="./images/+ikeaWeb素材/images/h-icon-4.svg" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <section id="food">
+        <div class="food_pt">
+            <figure>
+                <img id="food_1" src="./images/+ikeaWeb素材/images/food_1.png" alt="">
+            </figure>
+            <figure>
+                <img id="food_2" src="./images/+ikeaWeb素材/images/food_2.png" alt="">
+            </figure>
+        </div>
+        <div class="food_text">
+            <h2>IKEA美食</h2>
+            <p>IKEA邀請你在逛店的過程中到餐廳細細品嚐各式瑞典風味餐點！完成購物後，不妨順道逛逛瑞典食品超市吧！提供美味、豐富多元、永續發展的食材。最後別忘了到美食小站來份美味熱狗、享受霜淇淋的好滋味！</p>
+            <p>瑞典美食外帶服務登場，除了瑞典餐廳，在美食小站也能買到瑞典肉丸等經典主餐！</p>
+            <a href="#">看美食小站專屬外帶菜單</a>
+        </div>
+    </section>
+
+</main>
+<footer>© Inter IKEA Systems B.V. 2010 – 2023</footer>
+
+<!-- bootstrap@5.3.0 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
