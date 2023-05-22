@@ -10,8 +10,13 @@ ul{
     padding: 0;
 }
 /*carousel*/
-.carousel-inner{
+.carousel-item{
     height: calc(100vh - 70px); /*符號兩旁要有空格，用於兩個元素不同尺寸單位的時候，此表示滿版狀態但扣掉導覽列70px*/
+}
+.carousel-item img{
+    object-fit:cover;
+    height: 100%; 
+    /* 照理說也要寫w100%符合object fit RWD，但上面的語法已有w100%所以這邊不用寫 */
 }
 /*navbar*/
 .navbar{
@@ -60,6 +65,7 @@ ul{
 /* FOOD區 */
 #food{
     display: flex;
+    height: 380px;
 }
 /*平常不要亂用position，因為不好寫RWD，最好用在正常排版的元素中，不會隨便浮動的*/
 .food_pt{
@@ -69,28 +75,29 @@ ul{
     background-size: 100% 100%;
 }
 .food_pt figure{
-    position:absolute;
+    position: absolute;
 }
 #food_1{
     width: 300px;
-    top: 80px;
-    right: -60px;
-    animation: food_1 3s;
+    /* top: 80px; right: -60px; */
+    animation: food_1 3s both;
 }
 @keyframes food_1 {
     from {top: 80px; right: 1000px; }
     to   {top: 80px; right:-60px; }
 }
+
 #food_2{
-    width: 220px;
-    top: 20px;
-    left: -250px;
-    animation: food_2 3s;
+    width: 250px;
+    /* top: 40px; left: 10%; */
+    animation: food_2 3s 1s both; /*delay 1秒後跑下面的動畫*/
 }
+
 @keyframes food_2 {
-    from {top:20px;left:-250px; }
-    to {top:20px;left:15px; }
+    from {top:40px; left:-300px; }
+    to {top:40px; left:10%; }
 }
+
 .food_text{
     flex:1;
     margin: 50px 80px;
