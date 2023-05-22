@@ -1,4 +1,47 @@
 @charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box; /*不累加邊框與內距,RWD*//*所以只要算margin跟width*/
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family: /*⻄文*/ -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+    /*中文*/ "蘋方-繁", "PingFang TC", "Noto Sans TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+}
+ol, ul {
+	list-style: none; /*所以不會有點點*/
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+    content:none;
+}
+
 /* 共用 */
 img{
     display: block;
@@ -20,6 +63,10 @@ ul{
 }
 /*navbar*/
 .navbar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
     height: 70px;
 }
 .navbar-brand{
@@ -38,6 +85,13 @@ ul{
 }
 .navbar-toggler:focus{
     box-shadow: none;
+}
+
+.dropdown-menu, .navbar-collapse{
+    z-index: 999;
+    top:auto!important /*因為會被bootstrap裡面設定的東西覆蓋*/
+
+
 }
 #search_form{
     position: relative; /*給放大鏡定位*/
@@ -71,7 +125,7 @@ ul{
 .food_pt{
     position: relative;
     flex: 1;
-    background-image:url('../images/+ikeaWeb素材/images/bg_s.jpg');
+    background-image:url('../images/bg_s.jpg');
     background-size: 100% 100%;
 }
 .food_pt figure{
@@ -79,8 +133,8 @@ ul{
 }
 #food_1{
     width: 300px;
-    /* top: 80px; right: -60px; */
-    animation: food_1 3s both;
+    top: 80px; right: -60px;
+    animation: 3s both; /*js中有指定名字了，這邊就可以省略*/
 }
 @keyframes food_1 {
     from {top: 80px; right: 1000px; }
@@ -89,8 +143,8 @@ ul{
 
 #food_2{
     width: 250px;
-    /* top: 40px; left: 10%; */
-    animation: food_2 3s 1s both; /*delay 1秒後跑下面的動畫*/
+    top: 40px; left: 10%;
+    animation: 3s 1s both; /*delay 1秒後跑下面的動畫*/
 }
 
 @keyframes food_2 {
@@ -107,6 +161,8 @@ ul{
     position: relative;
     display: inline-flex;
     margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 .food_text h2::before{
@@ -130,6 +186,48 @@ ul{
     right: -15px;
 }
 
+.food_text p{
+    margin: 1rem 0;
+    line-height: 1.5rem;
+}
+/*product*/
+#product h2{
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    border-left: blue 10px solid;
+    padding-left: 1rem;
+    margin: 2rem 0 1rem;
+}
+#product h2::before{
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 13rem;
+    width: 85%;
+    height: 2px; /*就會看起來像一條線*/
+    background-color: blue; 
+}
+#product h2 ::after{ /*會直接在文字的前後，不用定位*/
+    content: 'ALL'; /*裝飾文字*/ /*google搜尋不到，所以是不重要的文字*/
+    color: blue;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+.row>*{
+    padding: 30px 20px;
+    text-align: center;
+}
+.row>*>*{
+    margin:15px 0;
+}
+.row h3{
+    font-size:1.2rem;
+    font-weight: 500;
+}
+.row p{
+    color: red;
+}
 /*頁尾區*/
 footer{
     background-color: rgb(255, 251, 0);

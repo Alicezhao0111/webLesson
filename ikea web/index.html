@@ -25,10 +25,11 @@
 </head>
 
 <body>
-    <header>
     <!-- 換圖輪播 -->
+    <header id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="3000">
+    
     <!-- class加carousel-fade可淡入淡出， data-bs-ride="carousel"可自動輪播 data-bs-pause="false" 可設定滑鼠懸停時仍會播放，data-bs-interval="3000"間隔時間-->
-    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="3000">
+    <div>
         <!-- 輪播提示器 -->
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -41,10 +42,10 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <picture> <!-- 手機板的換一張圖片 -->
-                    <source media = "(min-width:576px)"srcset="images/banner_1_m.jpg">
+                    <source media="(max-width:576px)" srcset="./images/banner_1_m.jpg">
                 </picture>
                 <!-- 原本bootstrap就有給在img的 class="d-block w-100" 這邊刪掉寫到css中-->
-            <img src="../images/banner_1.jpg" alt="...">
+            <img src="./images/banner_1.jpg" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Some representative placeholder content for the first slide.</p>
@@ -52,9 +53,9 @@
             </div>
         <div class="carousel-item">
             <picture> <!-- 手機板的換一張圖片 -->
-                <source media = "(min-width:576px)"srcset="images/+ikeaWeb素材/images/._banner_2_m.jpg">
+                <source media = "(max-width:576px)" srcset="./images/banner_2_m.jpg">
             </picture>
-            <img src="../images/banner_2.jpg"alt="...">
+            <img src="./images/banner_2.jpg"alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Second slide label</h5>
                 <p>Some representative placeholder content for the second slide.</p>
@@ -62,9 +63,9 @@
         </div>
         <div class="carousel-item">
             <picture> <!-- 手機板的換一張圖片 -->
-                <source media = "(min-width:576px)"srcset="images/+ikeaWeb素材/images/._banner_3_m.jpg">
+                <source media = "(max-width:576px)"srcset="images/banner_3_m.jpg">
             </picture>
-            <img src="../images/banner_3.jpg"alt="...">
+            <img src="./images/banner_3.jpg"alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p>
@@ -72,9 +73,9 @@
         </div>
         <div class="carousel-item">
             <picture> <!-- 手機板的換一張圖片 -->
-                <source media = "(min-width:576px)"srcset="images/+ikeaWeb素材/images/._banner_4_m.jpg">
+                <source media = "(max-width:576px)"srcset="images/banner_4_m.jpg">
             </picture>
-            <img src="../images/banner_4.jpg"alt="...">
+            <img src="./images/banner_4.jpg"alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p>
@@ -82,9 +83,9 @@
         </div>
         <div class="carousel-item">
             <picture> <!-- 手機板的換一張圖片 -->
-                <source media = "(min-width:576px)"srcset="images/+ikeaWeb素材/images/._banner_5_m.jpg">
+                <source media = "(max-width:576px)"srcset="images/banner_5_m.jpg">
             </picture>
-            <img src="../images/banner_5.jpg"  alt="...">
+            <img src="./images/banner_5.jpg"  alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p>
@@ -99,13 +100,14 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div>
+    </div>  
+</header>
     <!-- 導覽列 -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <!-- 品牌名稱及logo -->
             <a class="navbar-brand" href="#">
-                <img src="../images/ikea-logo.svg" alt="">
+                <img src="./images/ikea-logo.svg" alt="">
             </a>
             <!-- 漢堡按鈕 -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -159,25 +161,25 @@
                 <!-- 原本bootstrap有的 class="d-flex" 刪掉 -->
                 <form name="search_form" id="search_form" method="post" role="search">
                     <input class="form-control me-2" type="search" placeholder="請輸入關鍵字" aria-label="Search">
-                    <button class="search_btn" type="submit"><img src="../images/h-icon-1.svg" alt=""></button>
+                    <button class="search_btn" type="submit"><img src="./images/h-icon-1.svg" alt=""></button>
                 </form>
                 <ul class="icon">
-                    <li><a href=""><img src="../images/h-icon-2.svg" alt=""></a></li>
-                    <li><a href=""><img src="../images/h-icon-3.svg" alt=""></a></li>
-                    <li><a href=""><img src="../images/h-icon-4.svg" alt=""></a></li>
+                    <li><a href=""><img src="./images/h-icon-2.svg" alt=""></a></li>
+                    <li><a href=""><img src="./images/h-icon-3.svg" alt=""></a></li>
+                    <li><a href=""><img src="./images/h-icon-4.svg" alt=""></a></li>
                 </ul>
             </div>
         </div>
     </nav>
-</header>
+    
 <main>
     <section id="food">
         <div class="food_pt">
             <figure id="food_1">
-                <img src="/images/food_1.png" alt="">
+                <img src="./images/food_1.png" alt="">
             </figure>
             <figure id="food_2" >
-                <img src="../images/food_2.png" alt="">
+                <img src="./images/food_2.png" alt="">
             </figure>
         </div>
         <div class="food_text">
@@ -187,11 +189,155 @@
             <a href="#">看美食小站專屬外帶菜單</a>
         </div>
     </section>
+    <!-- 縮寫，文案用大括號包，有數字順序的可以用$符號 -->
+    <!-- 此為bootstrap的欄格系統 -->
+    <!-- section.container>h2+div.row>div.col-6 col-md-4 col-lg-3 col-xl-2*26>(figure>img[src='images/product/pt_$.jpg'])+h3{product-$}+p{NT.999} -->
+    <section id="product" class="container">
+        <h2>所有商品<span></span></h2>
+        <div class="row">
+            <!-- bootstrap語法 -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2"> 
+                <figure><img src="images/product/pt_1.jpg" alt=""></figure>
+                <h3>product-1</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_2.jpg" alt=""></figure>
+                <h3>product-2</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_3.jpg" alt=""></figure>
+                <h3>product-3</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_4.jpg" alt=""></figure>
+                <h3>product-4</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_5.jpg" alt=""></figure>
+                <h3>product-5</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_6.jpg" alt=""></figure>
+                <h3>product-6</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_7.jpg" alt=""></figure>
+                <h3>product-7</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_8.jpg" alt=""></figure>
+                <h3>product-8</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_9.jpg" alt=""></figure>
+                <h3>product-9</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_10.jpg" alt=""></figure>
+                <h3>product-10</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_11.jpg" alt=""></figure>
+                <h3>product-11</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_12.jpg" alt=""></figure>
+                <h3>product-12</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_13.jpg" alt=""></figure>
+                <h3>product-13</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_14.jpg" alt=""></figure>
+                <h3>product-14</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_15.jpg" alt=""></figure>
+                <h3>product-15</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_16.jpg" alt=""></figure>
+                <h3>product-16</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_17.jpg" alt=""></figure>
+                <h3>product-17</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_18.jpg" alt=""></figure>
+                <h3>product-18</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_19.jpg" alt=""></figure>
+                <h3>product-19</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_20.jpg" alt=""></figure>
+                <h3>product-20</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_21.jpg" alt=""></figure>
+                <h3>product-21</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_22.jpg" alt=""></figure>
+                <h3>product-22</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_23.jpg" alt=""></figure>
+                <h3>product-23</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_24.jpg" alt=""></figure>
+                <h3>product-24</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_25.jpg" alt=""></figure>
+                <h3>product-25</h3>
+                <p>NT.999</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <figure><img src="images/product/pt_26.jpg" alt=""></figure>
+                <h3>product-26</h3>
+                <p>NT.999</p>
+            </div>
+        </div>
+    </section>
+    
+
+    
 
 </main>
 <footer>© Inter IKEA Systems B.V. 2010 – 2023</footer>
 
 <!-- bootstrap@5.3.0 JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script src="./JS/script.js"></script>
 </body>
 </html>
