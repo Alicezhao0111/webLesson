@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>陣列方法</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="images/favicon.ico" rel="shortcut icon">
+    <meta charset="UTF-8">
+    <script src="/javascripts/vendor.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
+        integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="bg-lighter">
+    <div class="container main my-5">
+        <div class="row">
+            <main class="col post">
+                <!-- 章節標題 -->
+                <div class="mb-4">
+                    <h1 class="mt-0 text-muted">陣列方法</h1><small>檔名：<code>02-3-ex.html</code></small>
+                </div>
+                <div id="root"></div>
+                <script type="text/babel">
+                    // 練習區
+                    //JSX中的陣列方式
+                    // const people =[
+                    //     {
+                    //         name: '小叮噹',
+                    //         like:'銅鑼燒',
+                    //         price: 80
+                    //     },
+                    //     {
+                    //         name: '大雄',
+                    //         like:'牛肉麵',
+                    //         price: 120
+                    //     },
+                    //     {
+                    //         name: '宜靜',
+                    //         like:'鬆餅',
+                    //         price: 50
+                    //     },
+                    //     {
+                    //         name: '濟安',
+                    //         like:'漢堡',
+                    //         price: 70
+                    //     },
+                    // ];
+
+                    //新增一個欄位，將價格打8折
+                    //一般作法
+
+                    // for (let i=0; i<=people.length-1;i++){
+                    //     console.log(people[i].price * 0.8);
+                    // }
+
+                    //#2-3-1 陣列.forEach(內容，索引位置)方法
+                    // people.forEach((item, i)=>{
+                    //     //新增一個欄位，將價格打8折
+                    //     item.newPrice = item.price * 0.8;
+                    // });
+                    // console.log(people);
+
+                    //#2-3-2 重新建立新的陣列，資料來自於people陣列
+                    // const order = people.map ((item,i)=>{
+                    //     return{
+                    //         price: item.price * 0.8,
+                    //         title: item.like
+                    //     }
+                    // })
+                    // console.log(order);
+                    // console.log(people);
+
+                    //縮寫方式(拿掉return與{}之後，在箭頭後方的{}前後加上小括號)
+                    // const order = people.map((item,i) => ({
+                    //     price: item.price * 0.8,
+                    //     title: item.like
+                    // }));
+
+                    // #2-3-3 map 使用時的注意事項
+                    //當直接回傳時，會出現undefined
+                    //直接使用map時，會發生不符合條件的資料(undefined)也會產生出來
+                    // const order = people.map((item,i)=>{
+                    //     if(item.price>=80){
+                    //         return{
+                    //             price: item.price,
+                    //             title: item.like
+                    //         }
+                    //     }
+                    // });
+                    // console.log(order);
+
+                    //解決方法
+                    //先過濾(filter)資料，再map
+                    
+                    // const filterOrder = people.filter((item)=>{item.price>=80});
+                    // //再map
+                    // const order2=filterOrder.map((item,i) => {
+                    //     if(item.price>=80){
+                    //         return{
+                    //             price:item.price,
+                    //             title:item.like
+                    //         }
+                    //     }
+                    // });
+                    // console.log(order2);
+
+                    //map 在 react 中的應用
+                    const APP = () => {
+                            const people = [
+                                {
+                                    name: '小叮噹',
+                                    like: '銅鑼燒',
+                                    price: 80
+                                },
+                                {
+                                    name: '大雄',
+                                    like: '牛肉麵',
+                                    price: 120
+                                },
+                                {
+                                    name: '宜靜',
+                                    like: '鬆餅',
+                                    price: 50
+                                },
+                                {
+                                    name: '濟安',
+                                    like: '漢堡',
+                                    price: 70
+                                },
+                            ];
+                        return <div>
+                                    <ul>
+                                        {/*使用map方法帶出li內容*/}
+                                        {
+                                            people.map((item,i)=>{
+                                                return <li>{item.name}-喜歡-{item.like}</li>
+                                                
+                                            })
+                                        }
+                                    
+                                    </ul>
+                            </div>
+                        }
+
+                        ReactDOM.createRoot(document.getElementById('root')).render(<APP />)
+
+
+                </script>
+
+            </main>
+        </div>
+    </div>
+    <link rel="stylesheet" href="/stylesheets/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</body>
+
+</html>
