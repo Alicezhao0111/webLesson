@@ -1,3 +1,8 @@
+//啟用jquery ui tabs 
+$(function(){
+    $("#tabs").tabs();
+});
+
 //交換下拉選單定位
 $(window).scroll(function () {
     if ($(this).scrollTop() == 0) {
@@ -17,3 +22,8 @@ $(window).scroll(function(){ /*抓卷軸的動作*/
         $('#food_2').css('animation-name','food_2');
     }
     });
+
+//啟用lightbox
+lightbox.option({
+    'wrapAround' :true
+});

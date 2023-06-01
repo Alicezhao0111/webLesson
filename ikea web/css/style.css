@@ -190,8 +190,8 @@ ul{
     margin: 1rem 0;
     line-height: 1.5rem;
 }
-/*product*/
-#product h2{
+/*title*/
+.title {
     position: relative;
     font-size: 2rem;
     font-weight: bold;
@@ -199,34 +199,92 @@ ul{
     padding-left: 1rem;
     margin: 2rem 0 1rem;
 }
-#product h2::before{
+.title::before{
     content: '';
     position: absolute;
     bottom: 3px;
     left: 13rem;
-    width: 85%;
+    width: calc(100% - 13rem); /*減號前後要有空格*/
     height: 2px; /*就會看起來像一條線*/
     background-color: blue; 
 }
-#product h2 ::after{ /*會直接在文字的前後，不用定位*/
+.title::after{ /*會直接在文字的前後，不用定位*/
     content: 'ALL'; /*裝飾文字*/ /*google搜尋不到，所以是不重要的文字*/
     color: blue;
     font-size: 1.2rem;
     margin-left: 1rem;
 }
-.row>*{
+/*product*/
+#product .row>* {
     padding: 30px 20px;
     text-align: center;
 }
-.row>*>*{
+#product .row>* >* {
     margin:15px 0;
 }
-.row h3{
+#product .row h3{
     font-size:1.2rem;
     font-weight: 500;
 }
-.row p{
+#product .row p{
     color: red;
+}
+/*最新商品*/
+#tabs > div{
+    display: flex;
+}
+#tabs > div >*{
+    flex: 1;
+    margin: 0 20px;
+}
+#tabs .content > *{
+    margin: 15px 0;
+}
+#tabs .content h1{
+    font-size:1.2rem;
+}
+#tabs .content data{
+    display: block; /*因為data預設是行內元素，改為display:block就會自動滿版，把東西往下推*/
+    font-size:2.5rem;
+    line-height: 2rem;
+    border-left: #0152b9 solid 10px;
+    padding-left: 1rem;
+}
+#tabs .content div{
+    display: inline-block;
+    font-size: 2.2rem;
+    background-color: #F9D615;
+    padding: 0 10px;
+    box-shadow: 5px 5px 0 red;
+}
+
+/*改jQuery的樣式，class名字需要在網頁檢查那邊去找*/
+.ui-tabs{
+    width: 80%;
+    /* m0-a 置中的縮寫*/
+    margin: 0 auto;
+}
+ul.ui-tabs-nav{
+    display: flex;
+}
+.ui-widget-header{
+    border: none;
+    background: none;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+    border: 1px solid black;
+    background: none;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+    background: none;
+}
+.ui-tabs .ui-tabs-nav li {
+    border-bottom-width: 1px;
+}
+
+.ui-tabs-tab{
+    border-radius: 3px;
+
 }
 /*頁尾區*/
 footer{
