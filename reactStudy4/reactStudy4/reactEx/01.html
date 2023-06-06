@@ -32,23 +32,25 @@
                     const App = () => {
                         // #2 定義狀態
                         // #select 的項目使用陣列傳送資料
-                        const opList = ['台北'，'台中'，'高雄'];
+                        const opList = ['台北','台中','高雄'];
                         // console.log(opList);
                         const [selectState,setSelectState] = useState('');
 
                         return (<div>
-                            <select name="" id="">
-                                <option value="" disabled selected>--請選擇--</option>
+                            {selectState}
+                            <select name="" id="" 
+                            value={selectState}
+                            onChange={e => setSelectState(e.target.value)}> {/* 使用 set 將值寫入 */}
+                                <option value="" disabled>--請選擇--</option>
                                 {
                                     opList.map((city)=>{
                                         {/*value取出使用者選出的內容*/}
                                         return <option key={city} value={city}>{city} </option>
                                     })
                                 }
-                                
-                            
+
                                 </select>
-                            {/* 使用 set 將值寫入 */}
+
                         </div>)
                     }
 

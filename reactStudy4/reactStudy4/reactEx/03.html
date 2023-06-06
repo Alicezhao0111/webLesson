@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>useEffect 基礎介紹</title>
+    <title>input 綁定 useState</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="images/favicon.ico" rel="shortcut icon">
     <meta charset="UTF-8">
@@ -21,49 +21,61 @@
             <main class="col post">
                 <!-- 章節標題 -->
                 <div class="mb-4">
-                    <h1 class="mt-0 text-muted">useEffect 基礎介紹</h1><small>檔名：<code>03.html</code></small>
+                    <h1 class="mt-0 text-muted">input 綁定 useState</h1><small>檔名：<code>02.html</code></small>
                 </div>
-
+                <!-- React 方式，使用input -->
+                <!-- 根元素 -->
                 <div id="root"></div>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
                 <script type="text/babel">
-                    const { useState, useEffect } = React;
-                    const api = 'https://api.unsplash.com/search/photos/';
-                    const accessKey = '貼上自己申請的Key值';
-                    // 驗證是否能成功連上api
-                    // https://api.unsplash.com/photos/?client_id=YOUR_ACCESS_KEY
+                    // #1取出useState
+                        const { useState } = React;
 
-                    const SearchBox = ({ onSearchHandler, filterString }) => {
-                        return <div>
-                            <label htmlFor="filter">搜尋</label>
-                            <input type="text" id="filter" className="form-control"
-                                value={filterString}
-                                onChange={onSearchHandler}
-                            />
-                        </div>
-                    }
-                    const App = () => {
-                        console.log(1);
-                        const [filterString, setFilterString] = useState('animal');
-
-                        const onSearchHandler = (e) => {
-                            setFilterString(e.target.value);
+                        //#4 建立一個搜尋元件
+                        const SearchBox = ({ text, onSearch }) => {
+                            return (<>
+                                <label htmlFor="search">搜尋</label>
+                                <input id="search" className="form-control" type="text" value={text} onChange={onSearch} />
+                            </>)
                         }
 
-                        // #1 建立非同步方法時，會因為渲染的關係不斷重複觸發
 
-                        // #2 useEffect
+                        const App = () => {
+                            //const text = 'Hello';
+                            //#2 定義狀態
+                            const [text, setText] = useState('Hello');
 
-                        return (<div>
-                            {console.log(2)}
-                            <SearchBox onSearchHandler={onSearchHandler} filterString={filterString} />
+                            //#3 建立一個更新資料的函式
+                            const onSearch = (e) => {
+                                setText(e.target.value);
+                            }
+
+
+                        // return裡的內容盡量不要有太多程式碼，盡量都用變數(好管理)
+
+                        return ( <div> 
+                            {/*在一般變數下，input無法直接更改值*/}
+                            {/* #5 下方被註解的程式已經獨立到外部的元件。所以無須再顯示*/}
+                            
+                            {/*for在react中要改成htmlFor*/}
+                            {/*<label htmlFor="search">搜尋</label>
+                            <input id="search" className="form-control" type="text" value={text} onChange={onSearch} />
+                            */}
+                            {/* #5 呼叫(喧染)外部元件*/}
+                            <SearchBox text ={text} onSearch={onSearch} />
+                            <hr />
+                    
+                            更新後的值:{text} <br/>
+
                         </div>)
                     }
+                    ReactDOM.createRoot(document.querySelector('#root')).render(<App />);
 
-                    ReactDOM
-                        .createRoot(document.querySelector('#root'))
-                        .render(<App />)
+
                 </script>
+                <div>
+
+                </div>
+                
             </main>
         </div>
     </div>

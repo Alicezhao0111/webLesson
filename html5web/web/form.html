@@ -23,10 +23,11 @@
 
     <hr>
     <h2>會員資料修改</h2>
+     <!--type沒有對應屬性的直接寫text--><!--title是給視障者的導讀機制--><!--placeholder是提示訊息-->
 
     <form name="member_mod_form" id="member_mod_form" action="" method="post">
         <label for="username">*姓名:</label>
-        <input type="text" name="username" id="username" title="請輸入姓名" placeholder="王大明" required autocomplete="on"> <!--type沒有對應屬性的直接寫text--><!--title是給視障者的導讀機制--><!--placeholder是提示訊息-->
+        <input type="text" name="username" id="username" title="請輸入姓名" placeholder="王大明" required autocomplete="on">
         
         <label for="account">帳號: (禁用)</label>
         <input type="text" name="account" id="account" value="ritadesign" disabled> <!--value內是給後端的，前端只要示意就好-->

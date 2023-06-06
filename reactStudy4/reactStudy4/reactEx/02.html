@@ -23,7 +23,58 @@
                 <div class="mb-4">
                     <h1 class="mt-0 text-muted">input 綁定 useState</h1><small>檔名：<code>02.html</code></small>
                 </div>
+                更新後的值:<span id="showData">111</span><br>
+                <input type="text" id="input">
+                <script>
+                    //原生JS的事件
+                    const input = document.querySelector('#input')
+                    const showData = document.querySelector('#showData')
+                    //console.log(input)
+                    //查看成員dir
+                    //console.dir(input);
+                    //change事件，觸發時機在離開之後
+                    input.addEventListener('change',(e)=>{
+                        console.log(e.target.value);
+                    })
+                    //keyup事件，觸發時機在鍵盤彈起來的時候
+                    input.addEventListener('keyup',(e)=>{
+                        console.log(e.target.value)
+                        showData.innerHTML=e.target.value;
+                    })
+
                 
+                </script>
+                <hr>
+                <!-- React 方式，使用input -->
+                <!-- 根元素 -->
+                <div id="root"></div>
+                <script type="text/babel">
+                    // #1取出useState
+                    const{useState} = React;
+
+                    const App = () => {
+                        //const text = 'Hello';
+                        //#2 定義狀態
+                        const [text, setText] = useState('Hello');
+
+                        return ( <div> 
+                            {/*在一般變數下，input無法直接更改值*/}
+                            更新後的值:{text}
+                            <input type="text" value={text} onChange={
+                                (e) =>{
+                                    setText(e.target.value);
+                                }
+                            }/>
+
+                        </div>)
+                    }
+                    ReactDOM.createRoot(document.querySelector('#root')).render(<App />);
+
+
+                </script>
+                <div>
+
+                </div>
                 
             </main>
         </div>
