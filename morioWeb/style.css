@@ -224,9 +224,67 @@ section{
     align-items: center;
 }
 
+.title1{
+    font-size: 3.5rem;
+    margin-bottom: 2vh;
+}
+.title2{
+    font-size: 1.6rem;
+    letter-spacing: .05rem;
+    margin: 1rem 0;
+}
+
+.point_t,.point_b{
+    position: absolute;
+    width: 100%;
+}
+
+.point_t::before,.point_t::after,
+.point_b::before,.point_b::after{
+    content: '';
+    background: linear-gradient(145deg, #f6f6f6, #cfcfcf);
+    box-shadow: 1px 1px 10px #828282, 1px 1px 10px #000000;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.point_t{
+    top:25px;
+}
+.point_t::before{
+    content: '';
+    top: 0px;
+    left: 15px;
+}
+
+.point_t::after{
+    content: '';
+    top: 0px;
+    right: 15px;
+}
+.point_b{
+    bottom: 25px;
+}
+
+.point_b::before{
+    content: '';
+    top: 0px;
+    left: 15px;
+}
+
+.point_b::after{
+    content: '';
+    top: 0px;
+    right: 15px;
+}
+
+
 /*new區*/
 #news{
     background-color: #e70112;
+    height: 85vh;
 
 }
 .list-box{
@@ -237,23 +295,131 @@ section{
     position: relative;
     flex: 1;
     margin: 30px;
-    padding: 25px;
+    padding: 25px; /*padding: 25px 25px 4rem; 下面這樣設rem如果字變大，框框也會跟著變大，因為是依字的相對尺寸*/
     background-image: repeating-linear-gradient(-45deg,#474747, #474747 6px,#2a2929 0px, #2a2929 12px);
     border-radius: 15px;
+    transition: 1.5s;
 }
 #news .scenes{
     /*先讓他往外40px，再往內收10px，這樣呈現出來的陰影會更融合*/
     box-shadow: 0 0 40px -10px black;
+    transform-origin: bottom;
+    transition: 1.5s;
+
 }
 
 #news .role{
     position: absolute;
-    top: 0;
-    left: 10%;
-    width: 80%;
+    top: -4vh;
+    left: 18%;
+    width: 65%;
+    transition: 1.5s;
+
+}
+
+#news .date{
+    font-size: 1.2rem;
+    margin-top: 1.5vh;
+}
+
+#news .content{
+    position: absolute;
+    left: 25px;
+    bottom: 6rem;
+    opacity: 0;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    letter-spacing: .05rem;
+    /*多行省略*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    transition: 1.5s; /*這樣就算hover離開，也會有動畫*/
 }
 
 /*hover 後想要改變scenes*/
 #news .card-item:hover .scenes{
+    transform: perspective(1000px) rotateX(30deg) skewX(-20deg);
+    /*透視 旋轉 傾斜*/
     
 }
+#news .card-item:hover .role{
+    transform: scale(1.2); /*縮放*/
+    
+}
+#news .card-item:hover .content{
+    transform: translateY(4.5rem);
+    opacity: 1;
+}
+/*product區*/
+#product{
+    background-image: url(./images/bg-pattern-logos.png),
+    linear-gradient(-15deg, #bc00b7 16%, #23b2ff 76%);
+}
+
+#product .list-box{
+    margin-top: 5vh;
+}
+#product .card-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transform-style: preserve-3d; /*變一個3D的感覺*/
+}
+/* #product .btn{ */
+    /* font-size: 1rem;
+    padding: 10px 20px;
+    margin: 20px 0;
+} */
+#product .card-item> * {
+    transform: translateZ(50px);
+}
+#product .role{
+    position: relative;
+    width: 100%;
+    height: 26vh;
+}
+
+#product .role img{
+    width: auto;
+    height: 150%;
+    position: absolute;
+    top: -12vh;
+    left: 2%;
+
+}
+#product .content{
+    text-shadow: 0 0 20px #2a2929;
+}
+
+#product p{
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    letter-spacing: .05rem;
+}
+
+#product .btn{
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 20px #2a2929;
+    border-radius: 38px;
+    
+}
+
+.product_b::before{
+    content: '';
+    bottom: 0px;
+    left: 15px;
+}
+
+.product_b::after{
+    content: '';
+    bottom: 0px;
+    right: 15px;
+}
+
+#

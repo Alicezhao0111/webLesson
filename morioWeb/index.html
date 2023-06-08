@@ -47,6 +47,7 @@
         </div>
     </header>
     <main>
+        <!-- News區 -->
         <section id="news">
             <h2 class="title1">Mario in the news</h2>
             <div class="list-box">
@@ -55,19 +56,73 @@
                     <figure class="role"><img src="images/characters-1.png" alt=""></figure>
                     <p class="date">May 19, 2023</p>
                     <h3 class="title2">Race newly added course GCN Mushroom</h3>
-                    <p class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptates velit doloribus esse nam vero asperiores non tempora dignissimos exercitationem in sint placeat voluptatibus accusamus et, porro iusto nulla natus.</p>
+                    <p class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptates velit
+                        doloribus esse nam vero asperiores non tempora dignissimos exercitationem in sint placeat voluptatibus
+                        accusamus et, porro iusto nulla natus.</p>
+                    <div class="point_t"></div>
+                    <div class="point_b"></div>
                 </div>
                 <div class="card-item">
                     <figure class="scenes"><img src="images/scenes_2.jpg" alt=""></figure>
                     <figure class="role"><img src="images/characters-2.png" alt=""></figure>
                     <p class="date">May 6, 2023</p>
                     <h3 class="title2">Have a smashing time in the Bowser Tour</h3>
-                    <p class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptates velit doloribus esse nam vero asperiores non tempora dignissimos exercitationem in sint placeat voluptatibus accusamus et, porro iusto nulla natus.</p>
+                    <p class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptates velit
+                        doloribus esse nam vero asperiores non tempora dignissimos exercitationem in sint placeat voluptatibus
+                        accusamus et, porro iusto nulla natus.</p>
+                    <div class="point_t"></div>
+                    <div class="point_b"></div>
                 </div>
             </div>
             <a href="" class="btn">See more news</a>
-
+        
+        </section>
+        <!-- product區 -->
+        <section id="product">
+            <figure><img src="./images/wavy-line.png" alt="波浪裝飾"></figure>
+            <h2 class="title1">Mario on Nintendo Switch</h2>
+            <div class="list-box">
+                <div class="card-item card-3d">
+                    <figure class="role"><img src="images/mario_1.png" alt=""></figure>
+                    <div class="content">
+                        <h3 class="title2">Super Mario™ 3D World + Bowser's Fury</h3>
+                        <p>Enjoy 2 Mario adventures in one—a platformer with lively multiplayer + a bonus adventure.</p>
+                    </div>
+                    <a class="btn" href="">See the timeline ></a>
+                    <div class="point_t"></div>
+                    <div class="point_b"></div>
+        
+                </div>
+                <div class="card-item card-3d">
+                    <figure class="role"><img src="images/mario_2.png" alt=""></figure>
+                    <div class="content">
+                        <h3 class="title2">Super Mario™ 3D World + Bowser's Fury</h3>
+                        <p>Enjoy 2 Mario adventures in one—a platformer with lively multiplayer + a bonus adventure.</p>
+                    </div>
+                    <a class="btn" href="">See the timeline ></a>
+                    <div class="point_t"></div>
+                    <div class="point_b"></div>
+                </div>
+                <div class="card-item card-3d">
+                    <figure class="role"><img src="images/mario_3.png" alt=""></figure>
+                    <div class="content">
+                        <h3 class="title2">Super Mario™ 3D World + Bowser's Fury</h3>
+                        <p>Enjoy 2 Mario adventures in one—a platformer with lively multiplayer + a bonus adventure.</p>
+                    </div>
+                    <a class="btn" href="">See the timeline ></a>
+                    <div class="point_t"></div>
+                    <div class="point_b"></div>
+                </div>
+            </div>
         </section>
     </main>
+    <footer></footer>
+    <script src="vanilla-tilt.min.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".card-3d"),{
+            max: 25,
+            speed: 400
+        });
+    </script>
 </body>
 </html>
