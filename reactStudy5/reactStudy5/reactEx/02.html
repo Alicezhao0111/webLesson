@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>React 與表單元素</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="images/favicon.ico" rel="shortcut icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <script src="/javascripts/vendor.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
+        integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="bg-lighter">
+    <div class="container main my-5">
+        <div class="row">
+            <main class="col post">
+                <!-- 章節標題 -->
+                <div class="mb-4">
+                    <h1 class="mt-0 text-muted">React 與表單元素</h1><small>檔名：<code>02.html</code></small>
+                </div>
+                <div id="root"></div>
+                <script type="text/babel">
+                    const { useState } = React
+                    const App = () => {
+                        // #1使用者名稱
+                        const [inputState, setInputState] = useState('測試'); /*inputState無法改變，需要setInputState去做改變*/
+                        // #2 select(單選)
+                        const optionList=['台北','台中','高雄'];
+                        const [selectState, setSelectState]=useState(''); /*初始化為空值*/
+                        
+                        //#3 multiSelect 多選
+                        const optionList2=['台北','台中','高雄'];
+                        const [selectState2, setSelectState2]=useState('');
+                        
+                        /*將複雜的方式獨立出來做一個變數*/
+                        const selectHandler = e =>{
+                                    // console.dir(e);
+                                    // console.log([...e.target.selectedOptions].map((option)=>option.value));
+                                    // setSelectState2(e.target.value)
+                                    //寫入
+                                    setSelectState2([...e.target.selectedOptions].map((option)=>option.value));
+
+                        }
+
+                        return (<div>
+                            {/* #1 input */}
+                            <label htmlFor="username">使用者名稱 {inputState}</label>
+                            <input id="username" type="text" 
+                                value={inputState}
+                                onChange={e =>setInputState(e.target.value)} 
+                            // onchage事件被觸發後，會有一個[結果]往外丟
+                            // e.target.value在填寫欄位時產生的任何值，都會觸發他去改變內容
+                            />
+                            <br/>
+
+                            {/* #2 select 選擇、預設值 */}
+                            {selectState}
+                            <select name="" id="" 
+                                value={selectState}
+                                onChange={e=>setSelectState(e.target.value)}>
+                                <option value="" disabled>-- 請選擇地區 --</option>
+                                {
+                                    optionList.map((location)=>{
+                                        return <option value={location} key={location}>{location}</option>
+                                    })
+                                }
+
+                                {/*
+                                <option value="台北">台北</option>
+                                <option value="台中">台中</option>
+                                <option value="高雄">高雄</option>
+                                */}
+                            </select>
+                            <br/>
+
+                            {/* #3 multiSelect */}
+                            {selectState2}
+                            <select name="" id="" 
+                            //啟動可以多選(搭配鍵盤shift或ctrl)
+                                multiple
+                                value={selectState2}
+                                onChange={selectHandler}
+                                >
+
+                                <option value="" disabled>-- 請選擇地區 --</option>
+                                {
+                                    optionList2.map((location)=>{
+                                        return <option value={location} key={location}>{location}</option>
+                                    })
+                                }
+
+                            </select>
+                        </div>)
+                    }
+
+                    ReactDOM
+                        .createRoot(document.querySelector('#root'))
+                        .render(<App />)
+                </script>
+            </main>
+        </div>
+    </div>
+    <link rel="stylesheet" href="/stylesheets/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</body>
+
+</html>
