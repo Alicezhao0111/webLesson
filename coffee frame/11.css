@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: #eee;
+}
+
+.container{
+    width: 960px;
+    margin: auto;
+}
+
+/*預留解除浮動float*/
+.container::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+    clear: both;
+}
+
+.timeline{
+    padding: 100px 0 200px;
+}
+.timeline li{
+    /* border:1px solid red; */
+    width: 50%;
+    padding:20px 0;
+    box-sizing: border-box;
+    /*因為要做::after*/
+    position: relative;
+}
+
+/*li 奇數*/
+.timeline li:nth-child(odd){
+    float: left;
+    padding-right:100px;
+}
+
+/*li 偶數*/
+.timeline li:nth-child(even){
+    float:right;
+    padding-left: 100px;
+    /*向下移動li高度的50%*/
+    transform: translateY(50%);
+}
+
+/*li奇數右邊的垂直線*/
+.timeline li:nth-child(odd)::after{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top:0;
+    right:0;
+    background-color: #333;
+    z-index: -1;
+}
+
+.timeline li:last-child::after{
+    height: 50%;
+}
+
+/*圓點*/
+.timeline li::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #111;
+    top:0;
+    bottom:0;
+    margin: auto;
+    z-index: 2;
+}
+
+/*左圓點位置*/
+.timeline li:nth-child(odd)::before{
+    right: -10px;
+}
+/*右圓點位置*/
+.timeline li:nth-child(even)::before{
+    left: -10px;
+}
+/*超連結*/
+.timeline a{
+    display: block;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #888;
+    line-height: 1.5;
+}
+
+.timeline a:hover{
+    background-color: aqua;
+}
+
+.timeline a:hover h2,
+.timeline a:hover p{
+    color: #fff;
+}
+
+.timeline h2::after{
+    /* border: 1px solid red; */
+    content:'';
+    position:absolute;
+    width: 100px;
+    height: 1px;
+    background-color: #000000;
+    top:0;
+    bottom: 0;
+    margin: auto;
+}
+.timeline li:nth-child(odd) h2::after{
+    right: 0;
+}
+
+.timeline li:nth-child(even) h2::after{
+    left:0;
+}

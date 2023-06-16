@@ -1,0 +1,106 @@
+
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: sans-serif;
+}
+body{
+    background-color: rgb(255, 192, 203);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    width: 1200px;
+    height: 300px;
+    justify-content: space-between;
+}
+.box{
+    width: 370px;
+    background-color: aliceblue;
+    margin: 0 15px;
+    border-radius: 25px;
+    border: 10px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 10px 20px 50px rgb(255, 255, 255, 0.5);
+    border: 10px solid rgb(255,142,142);
+}
+
+.txt{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 0 20px 20px 20px;
+    /* height: 60%; */
+    /* background-color: brown; */
+}
+
+.txt h2{
+    color: pink;
+    margin-bottom: 10px;
+}
+.txt p{
+    /* background-color: aqua; */
+    display: block;
+    align-self: center;
+    color: rgb(116, 111, 111);
+    font-size: 1.2rem;
+    font-weight: 600;
+
+}
+
+.box .icon{
+    /* border: 1px solid red; */
+    width: 160px;
+    height: 160px;
+   color: rgb(247, 192, 255);
+    line-height: 160px;
+    font-size: 60px;
+    margin: 0 auto;
+    margin-top: -25%;
+    border-radius: 50%;
+    background-color: aliceblue;
+    position: relative;
+}
+
+/*這樣用偽元素，就不會動到icon又可以有效果*/
+
+.box .icon::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 10px solid rgb(255,142,142);
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    transform: rotate(-45deg);
+    left:-10px;
+    top: -10px;
+    
+
+}
+
+@keyframes fram1{
+    0%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(10deg);
+    }
+}
+
+.box:hover .fa{
+    animation: fram1 .2s infinite linear alternate;
+}
